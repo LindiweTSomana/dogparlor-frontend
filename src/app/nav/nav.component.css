@@ -1,0 +1,42 @@
+nav {
+    /* background-color: rgb(83, 117, 165); */
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    position: relative;
+    align-items: center; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    right: 20px;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+form input {
+    padding: 5px;
+    margin-right: 5px;
+    outline: none;
+}
+
+form button {
+    padding: 7px;
+    background-color: rgb(6, 78, 150);
+    color: white;
+    border: none;
+}
