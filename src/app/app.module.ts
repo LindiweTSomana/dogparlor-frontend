@@ -9,6 +9,7 @@ import { SidebarComponent } from './admin-dashboard/sidebar/sidebar.component';
 import { DashboardComponent } from './admin-dashboard/dashboard/dashboard.component';
 import { StatsComponent } from './admin-dashboard/dashboard/stats/stats.component';
 import { ChartComponent } from './admin-dashboard/dashboard/chart/chart.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ChartComponent } from './admin-dashboard/dashboard/chart/chart.componen
     DashboardComponent,
     StatsComponent,
     ChartComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
