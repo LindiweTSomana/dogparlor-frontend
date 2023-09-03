@@ -11,7 +11,7 @@ export class ChartComponent implements OnInit {
 
   ngOnInit(): void {
     var myChart = new Chart("myChart", {
-      type: 'bar',
+      type: 'line',
       data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         datasets: [{
@@ -24,7 +24,7 @@ export class ChartComponent implements OnInit {
             'rgba(54, 162, 235)',
             'rgba(54, 162, 235)'
           ],
-          borderWidth: 0
+          borderColor: 'rgba(54, 162, 235)'
         }]
       },
       options: {
