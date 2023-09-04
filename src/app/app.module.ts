@@ -10,6 +10,9 @@ import { DashboardComponent } from './admin-dashboard/dashboard/dashboard.compon
 import { StatsComponent } from './admin-dashboard/dashboard/stats/stats.component';
 import { ChartComponent } from './admin-dashboard/dashboard/chart/chart.component';
 import { HomeComponent } from './home/home.component';
+import { AddNewStaffComponent } from './admin-dashboard/dashboard/add-new-staff/add-new-staff.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import { HomeComponent } from './home/home.component';
     StatsComponent,
     ChartComponent,
     AdminDashboardComponent,
-    HomeComponent
+    HomeComponent,
+    AddNewStaffComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

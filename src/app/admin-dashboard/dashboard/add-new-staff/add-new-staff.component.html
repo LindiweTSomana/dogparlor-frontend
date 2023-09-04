@@ -1,0 +1,14 @@
+<h1>Add a new member</h1>
+<form action="" method="post" #addForm="ngForm" (ngSubmit)="addStaff(addForm)">
+
+    <input type="text" ngModel name="fname" placeholder="First name">
+    <input type="text" ngModel name="lname" placeholder="Last name">
+    <input type="text" ngModel name="specialty" placeholder="Specialty">
+
+    <select name="role" id="" ngModel>
+        <option value="none">Select role:</option>
+        <option *ngFor="let role of roles" [value]="role.roleID + ',' + role.name">{{role.name}}</option>
+    </select>
+
+    <button type="submit">Submit</button>
+</form>
