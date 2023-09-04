@@ -6,7 +6,7 @@
     <input type="text" ngModel name="specialty" placeholder="Specialty">
 
     <select name="role" id="" ngModel>
-        <option value="none">Select role:</option>
+        <option disabled value="none">Select role:</option>
         <option *ngFor="let role of roles" [value]="role.roleID + ',' + role.name">{{role.name}}</option>
     </select>
 

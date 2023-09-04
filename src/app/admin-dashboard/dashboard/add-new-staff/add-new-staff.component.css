@@ -24,8 +24,10 @@ form input {
 
 form select {
     outline: none;
-    padding: 15px;
-    margin-top: 15px;
+    padding: 10px;
+    /* margin-top: 5px; */
+    border: none;
+    border-bottom: solid rgb(6, 78, 150) 2px;
 }
 
 form option {
