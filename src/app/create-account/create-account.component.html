@@ -16,12 +16,17 @@
       max-width: 400px;
       margin: 0 auto;
       padding: 20px;
-      background-color: #fff;
+      background-color: #064E96;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
+    .form-group label{
+      color: white;
+    }
     h2 {
       text-align: center;
+      color: white;
     }
     label, input {
       display: block;
@@ -50,18 +55,28 @@
 <body>
 <div class="container">
   <h2>Create an Account</h2>
-  <form action="your_server_script.php" method="post">
+  <form action="create-account.php" method="post">
+    <div class="form-group">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
+    </div>
 
+    <div class="form-group">
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
+    </div>
 
+    <div class="form-group">
     <label for="confirm_password">Confirm Password:</label>
     <input type="password" id="confirm_password" name="confirm_password" required>
+      </div>
 
+
+    <div class="form-group">
     <button type="submit">Create Account</button>
+    </div>
   </form>
+
 </div>
 </body>
 </html>
