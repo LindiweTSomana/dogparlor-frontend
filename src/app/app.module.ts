@@ -10,6 +10,7 @@ import { DashboardComponent } from './admin-dashboard/dashboard/dashboard.compon
 import { StatsComponent } from './admin-dashboard/dashboard/stats/stats.component';
 import { ChartComponent } from './admin-dashboard/dashboard/chart/chart.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     StatsComponent,
     ChartComponent,
     AdminDashboardComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
