@@ -10,6 +10,9 @@ import { DashboardComponent } from './admin-dashboard/dashboard/dashboard.compon
 import { StatsComponent } from './admin-dashboard/dashboard/stats/stats.component';
 import { ChartComponent } from './admin-dashboard/dashboard/chart/chart.component';
 import { HomeComponent } from './home/home.component';
+import { HomesectionComponent } from './homesection/homesection.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { HomeComponent } from './home/home.component';
     StatsComponent,
     ChartComponent,
     AdminDashboardComponent,
-    HomeComponent
+    HomeComponent,
+    HomesectionComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

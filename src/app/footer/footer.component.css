@@ -1,0 +1,18 @@
+.footer-btn{
+    padding: 10px 12px;
+    border-radius: 15px;
+    color: white;
+    background-color: #3269a8;  
+    font-size: 20px;  
+    text-decoration: none;
+}
+footer{
+    padding:28px;
+    bottom: 0;
+    height:10px;
+    width: 540;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+}
