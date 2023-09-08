@@ -11,6 +11,9 @@ import { StatsComponent } from './admin-dashboard/dashboard/stats/stats.componen
 import { ChartComponent } from './admin-dashboard/dashboard/chart/chart.component';
 import { HomeComponent } from './home/home.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { AddNewStaffComponent } from './admin-dashboard/dashboard/add-new-staff/add-new-staff.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,14 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     ChartComponent,
     AdminDashboardComponent,
     HomeComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    AddNewStaffComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

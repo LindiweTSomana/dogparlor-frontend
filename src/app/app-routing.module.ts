@@ -18,11 +18,6 @@ const routes: Routes = [
     component: CreateAccountComponent
   },
 
-
-
-
-
-
 ];
 
 @NgModule({
