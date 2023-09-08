@@ -13,6 +13,9 @@ import { HomeComponent } from './home/home.component';
 import { AddNewStaffComponent } from './admin-dashboard/dashboard/add-new-staff/add-new-staff.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BookingComponent } from './booking/booking.component';
+import { AddressFormComponent } from './booking/address-form/address-form.component';
+import { BookingSummaryComponent } from './booking/booking-summary/booking-summary.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { FormsModule } from '@angular/forms';
     AdminDashboardComponent,
     HomeComponent,
     AddNewStaffComponent,
+    BookingComponent,
+    AddressFormComponent,
+    BookingSummaryComponent,
   ],
   imports: [
     BrowserModule,

@@ -44,7 +44,7 @@ export class AddNewStaffComponent implements OnInit {
       if (result != null) {
         Swal.fire(
           'Successful!',
-          'You added a new staff',
+          'You added a new staff member',
           'success'
         )
       } else {
