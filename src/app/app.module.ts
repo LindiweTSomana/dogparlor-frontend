@@ -10,6 +10,7 @@ import { DashboardComponent } from './admin-dashboard/dashboard/dashboard.compon
 import { StatsComponent } from './admin-dashboard/dashboard/stats/stats.component';
 import { ChartComponent } from './admin-dashboard/dashboard/chart/chart.component';
 import { HomeComponent } from './home/home.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 import { AddNewStaffComponent } from './admin-dashboard/dashboard/add-new-staff/add-new-staff.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -31,6 +32,8 @@ import { BookingSummaryComponent } from './booking/booking-summary/booking-summa
     BookingComponent,
     AddressFormComponent,
     BookingSummaryComponent,
+    CreateAccountComponent,
+    AddNewStaffComponent
   ],
   imports: [
     BrowserModule,
