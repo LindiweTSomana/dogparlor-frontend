@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { AddNewStaffComponent } from './admin-dashboard/dashboard/add-new-staff/add-new-staff.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ExtraServicesComponent } from './extra-services/extra-services.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     AdminDashboardComponent,
     HomeComponent,
     AddNewStaffComponent,
+    ExtraServicesComponent,
   ],
   imports: [
     BrowserModule,
