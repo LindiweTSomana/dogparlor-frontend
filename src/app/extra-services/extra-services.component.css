@@ -1,0 +1,90 @@
+
+    body, h1, p {
+        margin: 0;
+        padding: 0;
+    }
+
+  
+    .wrapper {
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+    }
+
+
+    .main-container {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 80%; 
+        max-width: 400px; 
+    }
+
+ 
+    .service-package-info h1 {
+        font-size: 24px;
+        color: #333;
+    }
+
+    
+    .service-package-info span {
+        display: block;
+        font-size: 16px;
+        color: #777;
+    }
+
+    .service-package-info  .service-text {
+        line-height: 30px;
+    }
+
+
+ 
+    .service-price {
+        font-size: 24px;
+        color: #ff6600;
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+   
+    .flex-container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    label {
+        flex-grow: 1;
+        font-size: 16px;
+        color: #333;
+    }
+
+   
+    input[type="checkbox"] {
+        margin-right: 10px;
+        transform : scale(1.4);
+    }
+
+  
+    .flex-container:not(:last-child) {
+        margin-bottom: 5px;
+    }
+
+    .button {
+        background-color: #ff6600;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+   
+    .button:hover {
+        background-color: #ff5500;
+    }
