@@ -34,7 +34,7 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     HomesectionComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
     AddNewStaffComponent,
     BookingComponent,
     AddressFormComponent,
