@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { BookingComponent } from './booking/booking.component';
 import { AddressFormComponent } from './booking/address-form/address-form.component';
 import { BookingSummaryComponent } from './booking/booking-summary/booking-summary.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { BookingSummaryComponent } from './booking/booking-summary/booking-summa
     AddressFormComponent,
     BookingSummaryComponent,
     CreateAccountComponent,
+    LoginComponent,
     AddNewStaffComponent
   ],
   imports: [
