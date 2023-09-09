@@ -1,4 +1,31 @@
 h1 {
-    background-color: aqua;
-    width: 100%;
+    color:white;
+    font-size :70px;
+    text-decoration: underline;
+    text-decoration-color: #3269a8;
 }
+h2 {
+    font-style: italic; 
+}
+.button {
+    padding: 10px 12px;
+    margin: auto; 
+    border-radius: 15px;
+    color: white;
+    background-color: #3269a8;  
+    font-size: 20px;  
+    text-decoration: none;
+}
+.homepage {
+    margin: auto;
+	font-family: "Fira Sans", sans-serif;
+    line-height: 1.6;
+    }
+.text-container {
+    position: absolute;
+    color: white;
+    left: 2rem;
+    top: 20rem;
+    padding: 0 1rem;
+    text-align: center;
+    }
