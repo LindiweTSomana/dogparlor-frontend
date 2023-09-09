@@ -13,6 +13,13 @@ import { HomeComponent } from './home/home.component';
 import { HomesectionComponent } from './homesection/homesection.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { AddNewStaffComponent } from './admin-dashboard/dashboard/add-new-staff/add-new-staff.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BookingComponent } from './booking/booking.component';
+import { AddressFormComponent } from './booking/address-form/address-form.component';
+import { BookingSummaryComponent } from './booking/booking-summary/booking-summary.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +34,18 @@ import { FooterComponent } from './footer/footer.component';
     HomesectionComponent,
     NavbarComponent,
     FooterComponent
+    AddNewStaffComponent,
+    BookingComponent,
+    AddressFormComponent,
+    BookingSummaryComponent,
+    CreateAccountComponent,
+    AddNewStaffComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
