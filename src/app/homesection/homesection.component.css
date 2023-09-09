@@ -1,0 +1,32 @@
+/* section */
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    text-decoration: underline #3269a8 ;
+    
+    }
+    .home {
+        height:600px;
+    }
+    section .service  {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    .home .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-between;
+    }
+    .home .boxes .box {
+        margin: 10px 20px;
+        max-width: calc(100% / 3 - 50px);
+        text-align: center;
+        border-radius: 12px;
+        padding: 30px 10px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.12);
+        cursor: default;
+        max-width: 50%;
+    }
+    

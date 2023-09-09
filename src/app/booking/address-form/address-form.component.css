@@ -1,0 +1,44 @@
+h1 {
+    text-align: center;
+    margin-top: 160px;
+}
+
+form {
+    padding: 40px;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.3);
+    width: fit-content;
+    margin: auto;
+}
+
+form input {
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 400px;
+    border: none;
+    border-bottom: solid rgb(6, 78, 150) 2px;
+    outline: none;
+}
+
+form button {
+    background-color: rgb(6, 78, 150);
+    padding: 10px;
+    color: white;
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+}
+
+form button:hover {
+    opacity: .7;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.type-of-address {
+    width: 400px;
+    display: flex;
+}
+
+.type-of-address label {
+    font-size: small;
+}
