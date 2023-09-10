@@ -1,0 +1,45 @@
+/* section */
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    text-decoration: underline #3269a8;
+
+}
+
+.home {
+    height: 600px;
+}
+
+section .service {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.home .boxes {
+    display: grid;
+    grid-template-columns: calc(33.33% - 25px) calc(33.33% - 25px) calc(33.33% - 25px);
+    width: 700px;
+    column-gap: 30px;
+    margin: 40px auto 0 auto;
+}
+
+.home .boxes .box {
+    text-align: center;
+    border-radius: 12px;
+    padding: 30px 0 30px 0;
+    /* padding: 30px 10px; */
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    width: 100%;
+    margin: auto;
+}
+
+.content {
+    padding-top: 90px;
+}
+
+.title h1 {
+    text-decoration: none;
+}

@@ -1,6 +1,6 @@
 h1 {
     text-align: center;
-    margin-top: 160px;
+    margin-top: 70px;
 }
 
 form {
@@ -41,4 +41,18 @@ form button:hover {
 
 .type-of-address label {
     font-size: small;
+}
+
+.address-added {
+    width: 80%;
+    margin: 40px auto 0 auto;
+}
+
+.address-added button {
+    background-color: rgb(6, 78, 150);
+    border: none;
+    padding: 7px;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
 }

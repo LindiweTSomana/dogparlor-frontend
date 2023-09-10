@@ -1,34 +1,41 @@
-nav{
-    /*background-color: #BB8FCE;*/
-    background-color: #3269a8;
-    padding: 4px;
-    overflow: hidden;
+nav {
+  /*background-color: #BB8FCE;*/
+  background-color: rgb(6, 78, 150);
+  padding: 15px;
+  overflow: hidden;
 }
+
 nav img {
-float: left;
-margin: 0 8px;
+  float: left;
+  margin: 0 8px;
+  border-radius: 50%;
 }
+
 nav a {
-    color: #f2f2f2;
-    text-align: center;
-    padding: 10px 12px;
-    text-decoration: none;
-    font-size: 17px;
-    float: left
-  }
-  nav a:hover {
-    border-radius: 15px;
-    background-color:#A6ACAF;
-    color:#212F3C ;
-  }
-  nav input[type=text] {
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-    float: right
-  }
-  nav input[type=text] {
-    border: 1px solid #ccc;
-  }
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+  font-size: 17px;
+  float: left
+}
+
+nav a:hover {
+  border-radius: 15px;
+  background-color: #A6ACAF;
+  color: #212F3C;
+}
+
+nav input[type=text] {
+  padding: 6px;
+  border: none;
+  /* margin-top: 8px; */
+  margin-right: 16px;
+  font-size: 17px;
+  outline: none;
+  float: right
+}
+
+nav input[type=text] {
+  border: 1px solid #ccc;
+}

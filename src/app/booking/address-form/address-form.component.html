@@ -1,21 +1,31 @@
 <h1>Enter your address</h1>
-<form action="">
+<div class="address-added" *ngIf="!isAddressEmpty && !editBtnClicked">
+    <h2>Your current address</h2>
+    <br/>
+    <p><b>Address Line:</b> {{ userAddress.addressValue }}</p>
+    <p><b>Suburb:</b> {{ userAddress.suburb }}</p>
+    <p><b>City:</b> {{ userAddress.city }}</p>
+    <p><b>Zip:</b> {{ userAddress.zipcode }}</p>
+    <button (click)="editAddress()">Edit Address</button>
+</div>
+
+<form action="" #addForm="ngForm" (ngSubmit)="addAddress(addForm)" *ngIf="isAddressEmpty || editBtnClicked">
     <div class="type-of-address">
-        <input type="radio" name="address-type" id="">
+        <input type="radio" name="addressType" ngModel id="" value="home">
         <label for="">Home</label>
 
-        <input type="radio" name="address-type" id="">
+        <input type="radio" name="addressType" ngModel id="" value="complex">
         <label for="">Complex</label>
 
-        <input type="radio" name="address-type" id="">
+        <input type="radio" name="addressType" ngModel id="" value="duplex">
         <label for="">Duplex</label>
 
-        <input type="radio" name="address-type" id="">
+        <input type="radio" name="addressType" ngModel id="" value="apartment">
         <label for="">Apartment</label>
     </div>
-    <input type="text" name="" id="" placeholder="Address line"><br/>
-    <input type="text" name="" id="" placeholder="Suburb"><br/>
-    <input type="text" name="" id="" placeholder="City"><br/>
-    <input type="text" name="" id="" placeholder="Zip code"><br/>
-    <button>Confirm address</button>
+    <input type="text" name="addressLine" ngModel id="" placeholder="Address line"><br/>
+    <input type="text" name="suburb" ngModel id="" placeholder="Suburb"><br/>
+    <input type="text" name="city" ngModel id="" placeholder="City"><br/>
+    <input type="text" name="zip" ngModel id="" placeholder="Zip code"><br/>
+    <button type="submit">Confirm address</button>
 </form>

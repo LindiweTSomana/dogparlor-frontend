@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Role } from 'src/app/models/role';
+import { Staff } from 'src/app/models/staff';
 import { RoleService } from 'src/app/services/role/role.service';
 import { StaffService } from 'src/app/services/staff/staff.service';
 import Swal from 'sweetalert2';
@@ -28,7 +29,7 @@ export class AddNewStaffComponent implements OnInit {
   }
 
   addStaff(addForm: NgForm): void {
-    const staff = {
+    const staff: Staff = {
       firstName: addForm.value.fname,
       lastName: addForm.value.lname,
       speciality: addForm.value.specialty,

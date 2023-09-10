@@ -1,14 +1,24 @@
 <div class="booking-summary">
-    <h1>Pamper</h1>
-    <p>Description, another one, cool description</p>
+    <h1>{{ service.name }}</h1>
+    <p>{{ service.description }}</p>
     <br>
-    <p>Long hair - small</p>
+    <p>Total: {{ total | currency: 'ZAR' }}</p>
     <br>
     <h3>Extra services</h3>
     <ol>
-        <li>Cutting in style</li>
-        <li>Anal glands secretion</li>
+        <table id="services">
+            <tr >
+              <th>No.</th>
+              <th>Extra Service Name</th>
+              <th>Price</th>
+            </tr>
+            <tr *ngFor="let extraService of extraServices; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ extraService.extraServiceName }}</td>
+              <td>{{ extraService.price | currency: 'ZAR' }}</td>
+            </tr>
+          </table>
     </ol>
 
-    <button>Confirm booking</button>
+    <button (click)="book()">Confirm booking</button>
 </div>

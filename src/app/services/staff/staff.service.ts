@@ -8,16 +8,16 @@ import { Staff } from 'src/app/models/staff';
 })
 export class StaffService {
 
-  _url = "http://localhost:8080/staff/create";
+  _url = "http://localhost:8080/staff/";
 
   constructor(private http: HttpClient) { }
 
   getStaff(): Observable<Staff[]> {
-    return this.http.get<Staff[]>(this._url);
+    return this.http.get<Staff[]>(this._url + 'getall');
   }
 
   addStaff(data: Staff): Observable<Staff> {
-    return this.http.post<Staff>(this._url, data);
+    return this.http.post<Staff>(this._url + 'create', data);
   }
 
 }

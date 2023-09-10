@@ -5,6 +5,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { BookingComponent } from './booking/booking.component';
 import { CreateAccountComponent } from "./create-account/create-account.component";
 import { LoginComponent } from './login/login.component';
+import { ExtraServicesComponent } from './extra-services/extra-services.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'extra-service',
+    component: ExtraServicesComponent
   }
 ];
 

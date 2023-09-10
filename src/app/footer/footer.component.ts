@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-
+  currentYear = new Date().getFullYear();
+  currentRoute = location.href.split('/')[location.href.split('/').length - 1];
 }

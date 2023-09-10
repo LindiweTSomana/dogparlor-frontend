@@ -43,3 +43,11 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+form a {
+    color: #fff;
+}
+
+.container {
+    margin-top: 50px;
+}

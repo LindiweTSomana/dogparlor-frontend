@@ -17,6 +17,7 @@ h2{
   margin-bottom: 20px;
 }
 
+
 .form-group {
   margin-bottom: 15px;
 }
@@ -48,4 +49,12 @@ h2{
 
 .form-group input[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+form a {
+  color: #fff;
+}
+
+.login-container {
+  margin-top: 50px;
 }

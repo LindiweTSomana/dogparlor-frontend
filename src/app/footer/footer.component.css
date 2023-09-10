@@ -2,17 +2,18 @@
     padding: 10px 12px;
     border-radius: 15px;
     color: white;
-    background-color: #3269a8;  
+    background-color: rgb(6, 78, 150);  
     font-size: 20px;  
     text-decoration: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
-footer{
-    padding:28px;
-    bottom: 0;
-    height:10px;
-    width: 540;
-    background-color: gray;
-    color: white;
+
+footer {
+    width: 100%; 
+    height: fit-content;
     text-align: center;
-    margin-top: auto;
+    /* margin-top: auto; */
 }
+

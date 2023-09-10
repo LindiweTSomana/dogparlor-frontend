@@ -10,7 +10,7 @@ import { DashboardComponent } from './admin-dashboard/dashboard/dashboard.compon
 import { StatsComponent } from './admin-dashboard/dashboard/stats/stats.component';
 import { ChartComponent } from './admin-dashboard/dashboard/chart/chart.component';
 import { HomeComponent } from './home/home.component';
-import { HomesectionComponent } from './homesection/homesection.component';
+import { HomesectionComponent } from './home/homesection/homesection.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
@@ -21,6 +21,8 @@ import { BookingComponent } from './booking/booking.component';
 import { AddressFormComponent } from './booking/address-form/address-form.component';
 import { BookingSummaryComponent } from './booking/booking-summary/booking-summary.component';
 import { LoginComponent } from './login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ExtraServicesComponent } from './extra-services/extra-services.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { LoginComponent } from './login/login.component';
     NavComponent,
     SidebarComponent,
     DashboardComponent,
+    ExtraServicesComponent,
     StatsComponent,
     ChartComponent,
     AdminDashboardComponent,
@@ -41,13 +44,14 @@ import { LoginComponent } from './login/login.component';
     BookingSummaryComponent,
     CreateAccountComponent,
     LoginComponent,
-    AddNewStaffComponent
+    AddNewStaffComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -74,7 +74,7 @@
     }
 
     .button {
-        background-color: #ff6600;
+        background-color: rgb(6, 78, 150);
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -86,5 +86,5 @@
     
    
     .button:hover {
-        background-color: #ff5500;
+        background-color: rgb(6, 78, 150);
     }
