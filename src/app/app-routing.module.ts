@@ -42,13 +42,12 @@ const routes: Routes = [
     component: ExtraServicesComponent
   },
   {
-<<<<<<< HEAD
     path: 'profile',
     component: ProfileComponent
-=======
+  },
+  {
     path: 'roles',
     component: RolesComponent
->>>>>>> bef1432020952eae8451438a83fc47a1056697a0
   }
 ];
 
