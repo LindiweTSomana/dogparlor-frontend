@@ -9,11 +9,18 @@ import { Role } from 'src/app/models/role';
 export class RoleService {
 
   private _url = "http://localhost:8080/role/getall";
+  private url = "http://localhost:8080/role/delete";
 
   constructor(private http: HttpClient) { }
 
   getRoles(): Observable<Role[]> {
     return this.http.get<Role[]>(this._url);
   }
+
+  deleteRole(roleid: number) {
+    const url = `${this.url}/${roleid}`;
+    return this.http.delete(url);
+  }
+
 
 }
