@@ -24,4 +24,11 @@ export class CustomerService {
     return this.http.post<Customer>(this._url + "update", customer);
   }
 
+  deleteCustomer(customerId: number): Observable<any> {
+    return this.http.delete(`/api/customers/${customerId}`); // Replace with your delete endpoint
+  }
 }
+
+
+
+

@@ -29,6 +29,9 @@ import { PopupUserDetailsComponent } from './profile/popup-user-details/popup-us
 import { PopupDogDetailsComponent } from './profile/popup-dog-details/popup-dog-details.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddPopupDogDetailsComponent } from './profile/add-popup-dog-details/add-popup-dog-details.component';
+import { AddNewRoleComponent } from './admin-dashboard/dashboard/add-new-role/add-new-role.component';
+import { RolesComponent } from './admin-dashboard/dashboard/roles/roles.component';
+import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,9 @@ import { AddPopupDogDetailsComponent } from './profile/add-popup-dog-details/add
     PopupUserDetailsComponent,
     PopupDogDetailsComponent,
     AddPopupDogDetailsComponent,
+    AddNewRoleComponent,
+    RolesComponent,
+    CustomerListComponent,
   ],
   imports: [
     BrowserModule,

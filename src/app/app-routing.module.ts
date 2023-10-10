@@ -7,6 +7,7 @@ import { CreateAccountComponent } from "./create-account/create-account.componen
 import { LoginComponent } from './login/login.component';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
 import { ProfileComponent } from './profile/profile.component';
+import {RolesComponent} from "./admin-dashboard/dashboard/roles/roles.component";
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
     path: 'admin',
     component: AdminDashboardComponent
   },
+
   {
     path: 'home',
     component: HomeComponent
@@ -40,8 +42,13 @@ const routes: Routes = [
     component: ExtraServicesComponent
   },
   {
+<<<<<<< HEAD
     path: 'profile',
     component: ProfileComponent
+=======
+    path: 'roles',
+    component: RolesComponent
+>>>>>>> bef1432020952eae8451438a83fc47a1056697a0
   }
 ];
 
