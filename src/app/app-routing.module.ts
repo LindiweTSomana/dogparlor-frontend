@@ -14,6 +14,7 @@ const routes: Routes = [
     path: 'admin',
     component: AdminDashboardComponent
   },
+
   {
     path: 'home',
     component: HomeComponent
