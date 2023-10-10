@@ -23,6 +23,12 @@ import { BookingSummaryComponent } from './booking/booking-summary/booking-summa
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
+import { ProfileComponent } from './profile/profile.component';
+import { DogTableComponent } from './profile/dog-table/dog-table.component';
+import { PopupUserDetailsComponent } from './profile/popup-user-details/popup-user-details.component';
+import { PopupDogDetailsComponent } from './profile/popup-dog-details/popup-dog-details.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddPopupDogDetailsComponent } from './profile/add-popup-dog-details/add-popup-dog-details.component';
 
 @NgModule({
   declarations: [
@@ -45,13 +51,19 @@ import { ExtraServicesComponent } from './extra-services/extra-services.componen
     CreateAccountComponent,
     LoginComponent,
     AddNewStaffComponent,
+    ProfileComponent,
+    DogTableComponent,
+    PopupUserDetailsComponent,
+    PopupDogDetailsComponent,
+    AddPopupDogDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,50 @@
+#dogs {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#dogs td,
+#dogs th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#dogs tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#dogs tr:hover {
+    background-color: #ddd;
+}
+
+#dogs th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(6, 78, 150);
+    color: white;
+}
+
+a {
+    cursor: pointer;
+    color: rgb(13, 104, 230);
+    background-color: rgb(6, 78, 150);
+    color: white;
+    padding: 5px;
+}
+
+button {
+    margin-right: 15px;
+    background-color: rgb(238, 72, 57);
+    padding: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.action-wrap {
+    width: fit-content;
+    margin: auto;
+}

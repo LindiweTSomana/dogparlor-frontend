@@ -6,9 +6,15 @@ import { BookingComponent } from './booking/booking.component';
 import { CreateAccountComponent } from "./create-account/create-account.component";
 import { LoginComponent } from './login/login.component';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
+  { 
+    path: '', 
+    redirectTo: 'home', 
+    pathMatch: 'full',
+  },
   {
     path: 'admin',
     component: AdminDashboardComponent
@@ -32,6 +38,10 @@ const routes: Routes = [
   {
     path: 'extra-service',
     component: ExtraServicesComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   }
 ];
 

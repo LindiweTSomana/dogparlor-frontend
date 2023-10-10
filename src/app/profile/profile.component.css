@@ -1,0 +1,117 @@
+.profile-wrapper {
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.profile {
+    background-color: rgb(237, 232, 232);
+    width: 100%;
+}
+
+.contact {
+    padding: 10px;
+    background-color: gray;
+    border-radius: 20px;
+    margin: 5px;
+    color: white;
+}
+
+.add-dog-btn {
+    background-color: rgb(6, 78, 150);
+    padding: 12px;
+    border: none;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.table {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.image-wrapper {
+    background-color: rgb(6, 78, 150);
+    height: 135px;
+    position: relative;
+}
+
+.image {
+    width: fit-content;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    height: fit-content;
+    border-style:groove;
+    border: 4px groove rgb(221, 14, 14);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px;
+}
+
+.data {
+    padding: 100px 0 50px 0;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.edit {
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.edit button {
+    background-color: rgb(6, 78, 150);
+    color: white;
+    width: 200px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.user-popup {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dog-popup {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.add-dog-popup {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.overlay {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.user-popup {
+    z-index: 2;
+}
+
+.dog-popup {
+    z-index: 2;
+}
+
+.add-dog-popup {
+    z-index: 2;
+}

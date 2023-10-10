@@ -1,0 +1,25 @@
+<div class="user-popup">
+    <h2>Edit dog details</h2>
+    <br/>
+    <form method="post" #addDogDetails="ngForm" (ngSubmit)="addDetails(addDogDetails)">
+        <input type="text" ngModel name="dogTag" [class.is-invalid]="errors.dogTag.isError" [placeholder]="errors.dogTag.message"><br/>
+        <input type="text" ngModel name="dogName" [class.is-invalid]="errors.dogName.isError" [placeholder]="errors.dogName.message"><br/>
+        <input type="text" ngModel name="age" [class.is-invalid]="errors.age.isError" [placeholder]="errors.age.message"><br/>
+        <input type="text" ngModel name="breed" [class.is-invalid]="errors.breed.isError" [placeholder]="errors.breed.message"><br/>
+        <select ngModel [class.is-invalid]="errors.dogSize.isError" name="dogSize">
+            <option value="Size">Dog Size</option>
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Big">Large</option>
+        </select>
+        <select ngModel [class.is-invalid]="errors.hairLength.isError" name="hairLength">
+            <option value="Hair Length">Hair Length</option>
+            <option value="Short">Short</option>
+            <option value="Medium">Medium</option>
+            <option value="Long">Long</option>
+        </select>
+        
+        <br/>
+        <button>Submit</button>
+    </form>
+</div>

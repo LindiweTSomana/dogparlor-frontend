@@ -20,4 +20,8 @@ export class CustomerService {
     return this.http.post<Customer>(this._url + "create", customer);
   }
 
+  updateCustomer(customer: Customer): Observable<Customer> {
+    return this.http.post<Customer>(this._url + "update", customer);
+  }
+
 }
