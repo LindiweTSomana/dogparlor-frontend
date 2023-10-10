@@ -13,6 +13,7 @@ const routes: Routes = [
     path: 'admin',
     component: AdminDashboardComponent
   },
+
   {
     path: 'home',
     component: HomeComponent
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'extra-service',
     component: ExtraServicesComponent
+
+
+
+
   }
 ];
 
