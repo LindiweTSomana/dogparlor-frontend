@@ -23,6 +23,7 @@ import { BookingSummaryComponent } from './booking/booking-summary/booking-summa
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
+import { AddNewRoleComponent } from './admin-dashboard/dashboard/add-new-role/add-new-role.component';
 import { RolesComponent } from './admin-dashboard/dashboard/roles/roles.component';
 import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list/customer-list.component';
 
@@ -47,6 +48,7 @@ import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list
     CreateAccountComponent,
     LoginComponent,
     AddNewStaffComponent,
+    AddNewRoleComponent,
     RolesComponent,
     CustomerListComponent,
   ],

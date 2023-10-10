@@ -44,3 +44,6 @@
 .sidebar ul li:nth-child(4)::before {
     background-image: url('../../../assets/icons8-chat-30.png');
 }
+.sidebar ul li:nth-child(5)::before {
+    background-image: url('../../../assets/addRole.png');
+}
