@@ -32,6 +32,8 @@ import { AddPopupDogDetailsComponent } from './profile/add-popup-dog-details/add
 import { AddNewRoleComponent } from './admin-dashboard/dashboard/add-new-role/add-new-role.component';
 import { RolesComponent } from './admin-dashboard/dashboard/roles/roles.component';
 import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list/customer-list.component';
+import { DeleteStaffMemberComponent } from './admin-dashboard/dashboard/delete-staff-member/delete-staff-member.component';
+import { StaffTaskComponent } from './admin-dashboard/dashboard/staff-task/staff-task.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list
     AddNewRoleComponent,
     RolesComponent,
     CustomerListComponent,
+    DeleteStaffMemberComponent,
+    StaffTaskComponent,
   ],
   imports: [
     BrowserModule,

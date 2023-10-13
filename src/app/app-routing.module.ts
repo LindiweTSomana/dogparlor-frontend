@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
 import { ProfileComponent } from './profile/profile.component';
 import {RolesComponent} from "./admin-dashboard/dashboard/roles/roles.component";
+import { DeleteStaffMemberComponent } from './admin-dashboard/dashboard/delete-staff-member/delete-staff-member.component';
+import { StaffTaskComponent } from './admin-dashboard/dashboard/staff-task/staff-task.component';
 
 
 const routes: Routes = [
@@ -48,8 +50,17 @@ const routes: Routes = [
   {
     path: 'roles',
     component: RolesComponent
+  }, 
+  {
+    path: "delete",
+    component: DeleteStaffMemberComponent
+  },
+  {
+    path: "task",
+    component: StaffTaskComponent
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
