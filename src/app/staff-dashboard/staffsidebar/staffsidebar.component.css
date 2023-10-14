@@ -1,0 +1,37 @@
+.sidebar {
+    background-color: rgb(6, 78, 150);
+    height: 100vh;
+    position: fixed;
+    padding: 30px 30px 0px 30px;
+    color: rgb(216, 231, 249);
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: rgb(216, 231, 249);
+}
+
+.sidebar ul li {
+    margin: 10px 0 30px 0;
+    position: relative; 
+    padding-left: 30px;
+}
+
+.sidebar ul li::before {
+    content: ""; 
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.sidebar ul li:nth-child(1)::before {
+    background-image: url('../../../assets/icons8-dashboard-50.png');
+}

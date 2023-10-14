@@ -6,6 +6,7 @@ import { BookingComponent } from './booking/booking.component';
 import { CreateAccountComponent } from "./create-account/create-account.component";
 import { LoginComponent } from './login/login.component';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
+import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'extra-service',
     component: ExtraServicesComponent
+  },
+  {
+    path: 'staff',
+    component: StaffDashboardComponent
   }
 ];
 

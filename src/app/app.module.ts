@@ -24,6 +24,10 @@ import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
 import { AddNewRoleComponent } from './admin-dashboard/dashboard/add-new-role/add-new-role.component';
+import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
+import { DashboardstaffComponent } from './staff-dashboard/dashboardstaff/dashboardstaff.component';
+import { StaffnavComponent } from './staff-dashboard/staffnav/staffnav.component';
+import { StaffsidebarComponent } from './staff-dashboard/staffsidebar/staffsidebar.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +51,10 @@ import { AddNewRoleComponent } from './admin-dashboard/dashboard/add-new-role/ad
     LoginComponent,
     AddNewStaffComponent,
     AddNewRoleComponent,
+    StaffDashboardComponent,
+    DashboardstaffComponent,
+    StaffnavComponent,
+    StaffsidebarComponent,
   ],
   imports: [
     BrowserModule,
