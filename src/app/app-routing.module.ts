@@ -7,6 +7,7 @@ import { CreateAccountComponent } from "./create-account/create-account.componen
 import { LoginComponent } from './login/login.component';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
 import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
+import {RolesComponent} from "./admin-dashboard/dashboard/roles/roles.component";
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
     path: 'admin',
     component: AdminDashboardComponent
   },
+
   {
     path: 'home',
     component: HomeComponent
@@ -37,6 +39,10 @@ const routes: Routes = [
   {
     path: 'staff',
     component: StaffDashboardComponent
+  },
+  {
+    path: 'roles',
+    component: RolesComponent
   }
 ];
 

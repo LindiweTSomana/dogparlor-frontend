@@ -1,0 +1,27 @@
+<h1>ROLES</h1>
+<br>
+<br>
+<table class="custom-table">
+  <thead>
+  <tr>
+    <th>Role ID</th>
+    <th>Name</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let role of roles">
+    <td>{{ role.roleID }}</td>
+    <td>{{ role.name }}</td>
+    <td>
+      <div class="button-container">
+
+      <button (click)="editRole(role)">Edit</button>
+      <button (click)="deleteRole(role.roleID)">Delete</button>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
