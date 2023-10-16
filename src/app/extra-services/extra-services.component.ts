@@ -2,6 +2,9 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ExtraServiceService } from '../services/extraservice/extra-service.service';
 import { ExtraService } from '../models/ExtraService';
 import { Router } from '@angular/router';
+import { Dog } from '../models/Dog';
+import { DogService } from '../services/dog/dog.service';
+import { Customer } from '../models/Customer';
 
 @Component({
   selector: 'app-extra-services',
@@ -10,15 +13,19 @@ import { Router } from '@angular/router';
 })
 export class ExtraServicesComponent implements OnInit {
   selectedService: any = { serviceId: '', name: '', description: '', serviceDuration: '', price: 34, image: '' };
+  dogList: Array<Dog> = [];
   extraServices: Array<ExtraService> = [];
   totalPrice: number = 0;
   selectedExtraServices: Array<ExtraService> = []
+  selectedDog: any = {};
+  previous: number = 0;
 
-  constructor(private extraServiceService: ExtraServiceService, private router: Router) {
+  constructor(private extraServiceService: ExtraServiceService, private dogService: DogService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.getExtraServices();
+    this.displayDogDropdownIfLoggedIn();
     let id: any = sessionStorage.key(0);
     let selectedService = JSON.parse(sessionStorage.getItem(id) || '{}');
     this.selectedService = selectedService;
@@ -43,20 +50,58 @@ export class ExtraServicesComponent implements OnInit {
   }
 
   addToTotal() {
-    this.totalPrice = this.selectedService.price;
+    this.totalPrice = this.selectedService.price + this.previous;
     this.selectedExtraServices.forEach(element => {
       this.totalPrice += element.price;
     });
   }
 
-  addToCart() {
+  addToCart(dog: any) {
+    const dogTag = JSON.parse(dog).dogTag;
     if (localStorage.getItem('customer')) {
       sessionStorage.setItem('extra_services', JSON.stringify(this.selectedExtraServices));
       sessionStorage.setItem('total', JSON.stringify(this.totalPrice));
+      sessionStorage.setItem('dog', dogTag);
       alert('Items added to cart');
       this.router.navigate(['/booking']);
     } else {
       this.router.navigate(['/login']);
+    }
+  }
+
+  onSelectDog(event: any) {
+    const selectedValue = event.target.value;
+    this.selectedDog = JSON.parse(selectedValue);
+    let total = 0;
+
+    if (this.selectedDog.hairLength === 'short') {
+      this.totalPrice -= this.previous;
+      total += 20;
+      this.previous = total;
+      // TODO: put the remaining code in a separate function
+      if (this.selectedDog.dogSize === 'small') {
+
+      }
+    } else if (this.selectedDog.hairLength === 'Medium') {
+      this.totalPrice -= this.previous;
+      total += 35;
+      this.previous = total;
+    } else if (this.selectedDog.hairLength === 'Long') {
+      this.totalPrice -= this.previous;
+      total += 45;
+      this.previous = total;
+    }
+
+    this.totalPrice += total;    
+  }
+
+  displayDogDropdownIfLoggedIn() {
+    let customer: Customer = JSON.parse(localStorage.getItem('customer') || '{}');
+    if (customer) {
+      this.dogService.getAllDogsByCustomer(customer).subscribe(dogs => {
+        this.dogList = dogs;
+        console.log(dogs);
+      })
     }
   }
 

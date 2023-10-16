@@ -23,6 +23,12 @@ import { BookingSummaryComponent } from './booking/booking-summary/booking-summa
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
+import { ProfileComponent } from './profile/profile.component';
+import { DogTableComponent } from './profile/dog-table/dog-table.component';
+import { PopupUserDetailsComponent } from './profile/popup-user-details/popup-user-details.component';
+import { PopupDogDetailsComponent } from './profile/popup-dog-details/popup-dog-details.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddPopupDogDetailsComponent } from './profile/add-popup-dog-details/add-popup-dog-details.component';
 import { AddNewRoleComponent } from './admin-dashboard/dashboard/add-new-role/add-new-role.component';
 import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
 import { DashboardstaffComponent } from './staff-dashboard/dashboardstaff/dashboardstaff.component';
@@ -52,6 +58,11 @@ import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list
     CreateAccountComponent,
     LoginComponent,
     AddNewStaffComponent,
+    ProfileComponent,
+    DogTableComponent,
+    PopupUserDetailsComponent,
+    PopupDogDetailsComponent,
+    AddPopupDogDetailsComponent,
     AddNewRoleComponent,
     StaffDashboardComponent,
     DashboardstaffComponent,
@@ -65,7 +76,8 @@ import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

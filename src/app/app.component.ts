@@ -8,7 +8,6 @@ import { slideInAnimation } from './app.animations';
   animations: [slideInAnimation]
 })
 export class AppComponent {
-  title = 'Alexa';
-
   
+
 }

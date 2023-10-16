@@ -7,10 +7,16 @@ import { CreateAccountComponent } from "./create-account/create-account.componen
 import { LoginComponent } from './login/login.component';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
 import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
 import {RolesComponent} from "./admin-dashboard/dashboard/roles/roles.component";
 
 
 const routes: Routes = [
+  { 
+    path: '', 
+    redirectTo: 'home', 
+    pathMatch: 'full',
+  },
   {
     path: 'admin',
     component: AdminDashboardComponent
@@ -39,6 +45,10 @@ const routes: Routes = [
   {
     path: 'staff',
     component: StaffDashboardComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   },
   {
     path: 'roles',

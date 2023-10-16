@@ -65,7 +65,9 @@ export class BookingSummaryComponent implements OnInit {
 
   book() {
     let booking = {
-      customer: this.user,
+      dog: {
+        dogTag: sessionStorage.getItem('dog')
+      },
       staffList: [],
       groomServices: [this.service],
       extraServices: this.extraServices,

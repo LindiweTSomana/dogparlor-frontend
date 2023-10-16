@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<div class="profile-wrapper">
+    <div class="profile">
+        <div class="image-wrapper">
+            <div class="image">
+                <img src="../../assets/combing.png" width="150" height="150" alt="">
+            </div>
+        </div>
+    
+        <div class="data">
+            <p><b>First Name:</b> {{ user.firstName }}</p>
+    
+            <p><b>Last Name:</b> {{ user.lastName }}</p>
+            <br/>
+            <p><b>Contact details:</b> <span *ngFor="let contact of user.contacts" class="contact">{{ contact.contactValue }}</span></p>
+            
+            <div class="edit">
+                <button (click)="openUserDialog()">Edit</button>
+            </div>
+
+            <div class="user-popup" *ngIf="isUserPopupOpened">
+                <app-popup-user-details></app-popup-user-details>
+            </div>
+            
+            <div class="dog-popup" *ngIf="isDogPopupOpened">
+                <app-popup-dog-details></app-popup-dog-details>
+            </div>
+            
+            <div class="add-dog-popup" *ngIf="isAddDogPopupOpened">
+                <app-add-popup-dog-details></app-add-popup-dog-details>
+            </div>
+
+        </div>
+    </div>
+    <div class="table">
+        <button (click)="activateAddDogPopup()" class="add-dog-btn">Add a new dog</button>
+        <app-dog-table (childEvent)="isDogPopupOpened=$event"></app-dog-table>
+    </div>
+</div>
+
+<div class="overlay" *ngIf="isUserPopupOpened || isDogPopupOpened || isAddDogPopupOpened" (click)="closeDialog()"></div>

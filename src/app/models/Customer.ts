@@ -1,6 +1,7 @@
 import { Contact } from "./Contact";
 
 export interface Customer {
+    customerID?: string,
     firstName: string,
     lastName: string,
     contacts: Array<Contact>,

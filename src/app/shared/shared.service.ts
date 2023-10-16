@@ -5,11 +5,11 @@ import { GroomService } from '../models/groomservice';
   providedIn: 'root'
 })
 export class SharedService {
-  message = {};
+  message: any = {};
 
   constructor() { }
 
-  setMessage(data: GroomService) {
+  setMessage(data: any) {
     this.message = data;
   }
 
