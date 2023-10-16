@@ -1,7 +1,7 @@
 export interface Booking {
     bookingID: string,
     bookingDate: string,
-    customer: {},
+    dog: {},
     staffList: [],
     groomServices: [],
     extraServices: [],

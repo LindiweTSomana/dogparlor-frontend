@@ -8,6 +8,12 @@
                 <h4>{{ selectedService.name }}</h4>
 
                 <p>{{ selectedService.description }}</p>
+
+                <select name="" id="" #dog (change)="onSelectDog($event)">
+                    <option value="">Select dog</option>
+                    <option value="{{dog | json}}" *ngFor="let dog of dogList">{{ dog.dogName }}</option>
+                </select>
+
                 <span>Medium Dog - Long hair</span><br>
             </div>
            
@@ -28,7 +34,7 @@
             </div>
             <div class="btn">
                 <br>
-                <button class="button" (click)="addToCart()">Add to cart</button>
+                <button class="button" (click)="addToCart(dog.value)">Add to cart</button>
             </div>
             
         </div>
