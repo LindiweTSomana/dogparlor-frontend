@@ -23,6 +23,8 @@ import { BookingSummaryComponent } from './booking/booking-summary/booking-summa
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
+import { ViewBookingsComponent } from './admin-dashboard/dashboard/view-bookings/view-bookings.component';
+import { EditStaffComponent } from './admin-dashboard/dashboard/edit-staff/edit-staff.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { ExtraServicesComponent } from './extra-services/extra-services.componen
     CreateAccountComponent,
     LoginComponent,
     AddNewStaffComponent,
+    ViewBookingsComponent,
+    EditStaffComponent,
   ],
   imports: [
     BrowserModule,
