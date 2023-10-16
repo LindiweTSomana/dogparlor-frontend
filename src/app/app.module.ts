@@ -36,6 +36,8 @@ import { StaffnavComponent } from './staff-dashboard/staffnav/staffnav.component
 import { StaffsidebarComponent } from './staff-dashboard/staffsidebar/staffsidebar.component';
 import { RolesComponent } from './admin-dashboard/dashboard/roles/roles.component';
 import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list/customer-list.component';
+import { DeleteStaffMemberComponent } from './admin-dashboard/dashboard/delete-staff-member/delete-staff-member.component';
+import { StaffTaskComponent } from './admin-dashboard/dashboard/staff-task/staff-task.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list
     StaffsidebarComponent,
     RolesComponent,
     CustomerListComponent,
+    DeleteStaffMemberComponent,
+    StaffTaskComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,26 @@
+<h1>Staff Task</h1>
+<hr>
+<table class="staff-table">
+    <thead>
+        <tr>
+            <th>Staff Name</th>
+            <th>Booking Date</th>
+            <th>Client</th>            
+            <th>Package Name</th>
+            <th>Extras</th>
+           
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of bookings">
+            <td>
+                <ul *ngFor="let staff of task.staffList">{{staff.firstName}} {{staff.lastName}}</ul>
+            </td>
+            <td>{{task.bookingDate | slice: 0:10}}</td>
+            <td>{{task.customer.firstName}} {{task.customer.lastName}}</td>
+            <td *ngFor="let package of task.groomServices">{{package.name}}</td>
+            <td>
+                <ul *ngFor="let extras of task.extraServices"> {{extras.extraServiceName}} </ul>
+            </td> 
+    </tr>         
+    </tbody>
+</table>
