@@ -30,6 +30,10 @@ import { PopupDogDetailsComponent } from './profile/popup-dog-details/popup-dog-
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddPopupDogDetailsComponent } from './profile/add-popup-dog-details/add-popup-dog-details.component';
 import { AddNewRoleComponent } from './admin-dashboard/dashboard/add-new-role/add-new-role.component';
+import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
+import { DashboardstaffComponent } from './staff-dashboard/dashboardstaff/dashboardstaff.component';
+import { StaffnavComponent } from './staff-dashboard/staffnav/staffnav.component';
+import { StaffsidebarComponent } from './staff-dashboard/staffsidebar/staffsidebar.component';
 import { RolesComponent } from './admin-dashboard/dashboard/roles/roles.component';
 import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list/customer-list.component';
 
@@ -60,6 +64,10 @@ import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list
     PopupDogDetailsComponent,
     AddPopupDogDetailsComponent,
     AddNewRoleComponent,
+    StaffDashboardComponent,
+    DashboardstaffComponent,
+    StaffnavComponent,
+    StaffsidebarComponent,
     RolesComponent,
     CustomerListComponent,
   ],
