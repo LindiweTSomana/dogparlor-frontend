@@ -23,6 +23,8 @@ import { BookingSummaryComponent } from './booking/booking-summary/booking-summa
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
+import { ViewBookingsComponent } from './admin-dashboard/dashboard/view-bookings/view-bookings.component';
+import { EditStaffComponent } from './admin-dashboard/dashboard/edit-staff/edit-staff.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DogTableComponent } from './profile/dog-table/dog-table.component';
 import { PopupUserDetailsComponent } from './profile/popup-user-details/popup-user-details.component';
@@ -63,6 +65,8 @@ import { BookingDateComponent } from './booking-date/booking-date.component';
     CreateAccountComponent,
     LoginComponent,
     AddNewStaffComponent,
+    ViewBookingsComponent,
+    EditStaffComponent,
     ProfileComponent,
     DogTableComponent,
     PopupUserDetailsComponent,

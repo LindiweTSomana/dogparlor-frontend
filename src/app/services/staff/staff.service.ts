@@ -12,12 +12,18 @@ export class StaffService {
 
   constructor(private http: HttpClient) { }
 
-  getStaff(): Observable<Staff[]> {
-    return this.http.get<Staff[]>(this._url + 'getall');
+  getStaff(): Observable<StaffService[]> {
+    return this.http.get<StaffService[]>(this._url + 'getall');
   }
 
   addStaff(data: Staff): Observable<Staff> {
     return this.http.post<Staff>(this._url + 'create', data);
   }
+
+  updateStaff(data: Staff): Observable<Staff> {
+    return this.http.post<Staff>(this._url + 'update', data);
+  }
+
+  
 
 }

@@ -6,6 +6,8 @@ import { BookingComponent } from './booking/booking.component';
 import { CreateAccountComponent } from "./create-account/create-account.component";
 import { LoginComponent } from './login/login.component';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
+import { ViewBookingsComponent } from './admin-dashboard/dashboard/view-bookings/view-bookings.component';
+import { EditStaffComponent } from './admin-dashboard/dashboard/edit-staff/edit-staff.component';
 import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import {RolesComponent} from "./admin-dashboard/dashboard/roles/roles.component";
@@ -22,9 +24,10 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminDashboardComponent
+    component: AdminDashboardComponent , children: [
+      { path: 'view-bookings', component: ViewBookingsComponent }
+    ]
   },
-
   {
     path: 'home',
     component: HomeComponent
@@ -45,6 +48,9 @@ const routes: Routes = [
     path: 'extra-service',
     component: ExtraServicesComponent
   },
+  {
+    path: 'edit-staff',
+    component: EditStaffComponent
   {
     path: 'staff',
     component: StaffDashboardComponent

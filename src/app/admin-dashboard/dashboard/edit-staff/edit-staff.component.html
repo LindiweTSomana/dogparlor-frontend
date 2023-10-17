@@ -1,0 +1,93 @@
+<!-- edit-staff.component.html
+Edit staff for the admin dashboard.
+Author: Byron Young (218155077)
+Date:16 October 2023
+-->
+<h1>Staff Members</h1>
+<table id="staff-table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Speciality</th>
+            <th>Role Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let staff of staffList">
+            <td id="firstName">{{staff.firstName}}</td>
+            <td id="lastName">{{staff.lastName}}</td>
+            <td id="speciality">{{staff.speciality}}</td>
+            <td id="roleName">{{staff.role[0]?.name}}</td>
+
+            <td id="editStaff">
+                <button class="btn btn-success" type="submit" data-bs-toggle="modal" data-bs-target="#editModal" (click)="editStaff(staff)" >Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+  <!-- Modal -->
+  <div  class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit Staff Member</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div  class="modal-body">
+            <form #updateForm="ngForm"  (ngSubmit)="updateStaff()">
+                <div class="form-group">
+                    <!--<input  type="hidden" #staffNumber [(ngModel)]="staffToUpdate.staffNumber" name="staffNumber" class="form-control" id="staffNumber">-->
+                  </div>
+
+                <div class="form-group">
+                  <label for="firstName">First name</label>
+                  <input type="text"  #firstName [(ngModel)]="staffToUpdate.firstName" name="fname" class="form-control" id="fname">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="lastName">Last name</label>
+                    <input type="text" #lastName [(ngModel)]="staffToUpdate.lastName" name="lname" class="form-control" id="lname">
+                  </div>
+
+                  <br>
+                  <div class="form-group">
+                    <label for="speciality">Speciality</label>
+                    <input type="text" #speciality [(ngModel)]="staffToUpdate.speciality" name="speciality" class="form-control" id="speciality">
+                  </div>
+
+                  <br>
+
+                  <!-- <div class="form-group">
+                    <label for="roleName">Role ID</label>
+                    <input type="text" #roleID [(ngModel)]="staffToUpdate.role[0].roleID" name="roleID" class="form-control" id="rolename">
+                  </div> -->
+
+                  <div class="form-group">
+                    <label for="roleName">Role name</label>
+                    <select name="role"  class="form-control" #name (change)="onSelectRole($event)" >
+                      <option value="">Select role:</option>
+                      <option *ngFor="let role of roles" value="{{role | json}}">{{role.name}}</option>
+                    </select>
+                  </div>
+
+
+
+
+                  <br>
+                  <div class="form-group">
+                    <input type="submit" (click)="updateStaff()" id="closeModal" value="Update"  class="btn btn-primary w-100">
+                  </div>
+
+            </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
