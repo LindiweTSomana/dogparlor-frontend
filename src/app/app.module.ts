@@ -25,6 +25,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
 import { ViewBookingsComponent } from './admin-dashboard/dashboard/view-bookings/view-bookings.component';
 import { EditStaffComponent } from './admin-dashboard/dashboard/edit-staff/edit-staff.component';
+import { ProfileComponent } from './profile/profile.component';
+import { DogTableComponent } from './profile/dog-table/dog-table.component';
+import { PopupUserDetailsComponent } from './profile/popup-user-details/popup-user-details.component';
+import { PopupDogDetailsComponent } from './profile/popup-dog-details/popup-dog-details.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddPopupDogDetailsComponent } from './profile/add-popup-dog-details/add-popup-dog-details.component';
+import { AddNewRoleComponent } from './admin-dashboard/dashboard/add-new-role/add-new-role.component';
+import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
+import { DashboardstaffComponent } from './staff-dashboard/dashboardstaff/dashboardstaff.component';
+import { StaffnavComponent } from './staff-dashboard/staffnav/staffnav.component';
+import { StaffsidebarComponent } from './staff-dashboard/staffsidebar/staffsidebar.component';
+import { RolesComponent } from './admin-dashboard/dashboard/roles/roles.component';
+import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list/customer-list.component';
+import { DeleteStaffMemberComponent } from './admin-dashboard/dashboard/delete-staff-member/delete-staff-member.component';
+import { StaffTaskComponent } from './admin-dashboard/dashboard/staff-task/staff-task.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { BookingDateComponent } from './booking-date/booking-date.component';
+
 
 @NgModule({
   declarations: [
@@ -49,13 +67,30 @@ import { EditStaffComponent } from './admin-dashboard/dashboard/edit-staff/edit-
     AddNewStaffComponent,
     ViewBookingsComponent,
     EditStaffComponent,
+    ProfileComponent,
+    DogTableComponent,
+    PopupUserDetailsComponent,
+    PopupDogDetailsComponent,
+    AddPopupDogDetailsComponent,
+    AddNewRoleComponent,
+    StaffDashboardComponent,
+    DashboardstaffComponent,
+    StaffnavComponent,
+    StaffsidebarComponent,
+    RolesComponent,
+    CustomerListComponent,
+    DeleteStaffMemberComponent,
+    StaffTaskComponent,
+    BookingDateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

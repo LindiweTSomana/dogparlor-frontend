@@ -1,0 +1,8 @@
+<h1>Pick your date</h1>
+<div class="confirm">
+    <p>Date selected: {{ chosenDay }}</p>
+    <div class="btn">
+        <button (click)="confirm()">Confirm</button>
+    </div>
+</div>
+<full-calendar [options]="calendarOptions"></full-calendar>

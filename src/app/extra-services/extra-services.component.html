@@ -8,6 +8,12 @@
                 <h4>{{ selectedService.name }}</h4>
 
                 <p>{{ selectedService.description }}</p>
+
+                <select name="" id="" #dog (change)="onSelectDog($event)">
+                    <option value="">Select dog</option>
+                    <option value="{{dog | json}}" *ngFor="let dog of dogList">{{ dog.dogName }}</option>
+                </select>
+
                 <span>Medium Dog - Long hair</span><br>
             </div>
            
@@ -17,7 +23,7 @@
 
         <div class="extra-service-container">
             <div class="flex-container" *ngFor="let extraService of extraServices" [id]="extraService.extraServiceId">
-                <label for="Shaving">{{ extraService.extraServiceName }}</label>
+                <label for="Shaving">{{ extraService.extraServiceName }} - {{ extraService.price | currency: 'ZAR' }}</label>
                 <input type="checkbox" id="shaving" name="shaving" value="Shaving" (change)="checkboxChanged($event, extraService)">
             </div>
 
@@ -28,7 +34,7 @@
             </div>
             <div class="btn">
                 <br>
-                <button class="button" (click)="addToCart()">Add to cart</button>
+                <button class="button" (click)="addToCart(dog.value)">Add to cart</button>
             </div>
             
         </div>

@@ -1,0 +1,28 @@
+full-calendar {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.confirm {
+    width: fit-content;
+    margin: 20px auto 20px auto;
+    text-align: center;
+}
+
+.btn {
+    width: fit-content;
+    margin: auto;
+}
+
+button {
+    background-color: rgb(29, 29, 199);
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

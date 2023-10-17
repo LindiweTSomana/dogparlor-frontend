@@ -17,7 +17,6 @@ export class AddNewStaffComponent implements OnInit {
   roles:Array<Role> = [];
 
   constructor(private roleService: RoleService, private staffService: StaffService) {
-    
   }
 
   ngOnInit(): void {

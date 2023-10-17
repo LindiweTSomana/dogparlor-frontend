@@ -1,0 +1,30 @@
+<table id="dogs">
+    <tr >
+        <th>No.</th>
+        <th>Dog Tag</th>
+        <th>Dog Name</th>
+        <th>Age</th>
+        <th>Breed</th>
+        <th>Dog Size</th>
+        <th>Hair Length</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let dog of dogs; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ dog.dogTag }}</td>
+        <td>{{ dog.dogName }}</td>
+        <td>{{ dog.age }}</td>
+        <td>{{ dog.breed }}</td>
+        <td>{{ dog.dogSize }}</td>
+        <td>{{ dog.hairLength }}</td>
+        <td>
+            <div class="action-wrap">
+                <button (click)="deleteDog(dog.dogTag)">Delete</button>
+                <a (click)="editDog(dog)">Edit</a>
+            </div>
+        </td>
+    </tr>
+</table>
+<br/>
+<br/>
+<br/>

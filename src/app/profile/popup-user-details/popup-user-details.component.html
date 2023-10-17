@@ -1,0 +1,12 @@
+<div class="user-popup">
+    <h2>Edit user details</h2>
+    <br/>
+    <form method="post" #editUserDetails="ngForm" (ngSubmit)="editUser(editUserDetails)">
+        <input type="text" ngModel name="firstName" placeholder="first name"><br/>
+        <input type="text" ngModel name="lastName" placeholder="last name"><br/>
+        <input type="text" ngModel name="phone" placeholder="phone number"><br/>
+        <input type="text" ngModel name="email" placeholder="email"><br/>
+        <br/>
+        <button>Submit</button>
+    </form>
+</div>

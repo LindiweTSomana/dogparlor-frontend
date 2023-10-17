@@ -64,8 +64,14 @@ export class BookingSummaryComponent implements OnInit {
   }
 
   book() {
+    const originalDate = new Date(sessionStorage.getItem('date')!);
+    const isoDate = originalDate.toISOString();
+
     let booking = {
-      customer: this.user,
+      dog: {
+        dogTag: sessionStorage.getItem('dog')
+      },
+      bookingDate: isoDate,
       staffList: [],
       groomServices: [this.service],
       extraServices: this.extraServices,
@@ -94,8 +100,9 @@ export class BookingSummaryComponent implements OnInit {
           'Successful!',
           'Booking has been successfully made',
           'success'
-        )
-        this.router.navigate(['/home']);
+        ).then((res) => {
+          this.router.navigate(['/home']);
+        })
       }
     );
   }
