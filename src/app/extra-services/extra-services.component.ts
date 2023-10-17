@@ -69,26 +69,36 @@ export class ExtraServicesComponent implements OnInit {
     }
   }
 
+  setPriceByDogSize(size: String): number {
+    let total: number = 0;
+    // TODO: put the remaining code in a separate function
+    if (size === 'Small') {
+      total += 10;
+    } else if (size === 'Medium') {
+      total += 15;
+    } else if (size === 'Large') {
+      total += 20;
+    }
+
+    return total;
+  }
+
   onSelectDog(event: any) {
     const selectedValue = event.target.value;
     this.selectedDog = JSON.parse(selectedValue);
     let total = 0;
 
-    if (this.selectedDog.hairLength === 'short') {
+    if (this.selectedDog.hairLength === 'Short') {
       this.totalPrice -= this.previous;
-      total += 20;
+      total += (20 + this.setPriceByDogSize(this.selectedDog.dogSize));
       this.previous = total;
-      // TODO: put the remaining code in a separate function
-      if (this.selectedDog.dogSize === 'small') {
-
-      }
     } else if (this.selectedDog.hairLength === 'Medium') {
       this.totalPrice -= this.previous;
-      total += 35;
+      total += (35 + this.setPriceByDogSize(this.selectedDog.dogSize));
       this.previous = total;
     } else if (this.selectedDog.hairLength === 'Long') {
       this.totalPrice -= this.previous;
-      total += 45;
+      total += (50 + this.setPriceByDogSize(this.selectedDog.dogSize));
       this.previous = total;
     }
 

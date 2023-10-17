@@ -18,4 +18,12 @@ export class BookingService {
   createBooking(booking: any): Observable<BookingService> {
     return this.http.post<BookingService>(this._url + 'create', booking);
   }
+
+  getLatestDayDates():Observable<any> {
+    return this.http.get<any>(this._url + 'get-dates');
+  }
+
+  getFullyBookedDatesByMonth(date: Array<string>): Observable<string[]> {
+    return this.http.post<string[]>(this._url + 'unavailable-dates', date);
+  }
 }

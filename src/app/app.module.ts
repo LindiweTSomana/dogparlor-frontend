@@ -38,6 +38,9 @@ import { RolesComponent } from './admin-dashboard/dashboard/roles/roles.componen
 import { CustomerListComponent } from './admin-dashboard/dashboard/customer-list/customer-list.component';
 import { DeleteStaffMemberComponent } from './admin-dashboard/dashboard/delete-staff-member/delete-staff-member.component';
 import { StaffTaskComponent } from './admin-dashboard/dashboard/staff-task/staff-task.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { BookingDateComponent } from './booking-date/booking-date.component';
+
 
 @NgModule({
   declarations: [
@@ -74,6 +77,7 @@ import { StaffTaskComponent } from './admin-dashboard/dashboard/staff-task/staff
     CustomerListComponent,
     DeleteStaffMemberComponent,
     StaffTaskComponent,
+    BookingDateComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +85,8 @@ import { StaffTaskComponent } from './admin-dashboard/dashboard/staff-task/staff
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
