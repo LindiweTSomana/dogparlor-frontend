@@ -4,6 +4,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { BookingService } from '../services/booking/booking.service';
 import * as moment from 'moment';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking-date',
@@ -14,25 +16,21 @@ export class BookingDateComponent implements OnInit {
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
     dateClick: this.handleDateClick.bind(this), // MUST ensure `this` context is maintained
-    events: [
-      { title: 'Fully booked', date: '2023-10-01' },
-      { title: 'Fully booked', date: '2023-10-02' }
-    ],
+    events: [],
     datesSet: this.handleDateChange.bind(this),
     plugins: [dayGridPlugin, interactionPlugin],
   };
 
-  dateChoice: String = '';
+  chosenDay: String = '';
   dates: Array<Date> = [];
   currentMonth: string = '';
   currentYear: string = '';
+  dateSessionObject: string = '';
 
-  constructor(private bookingService: BookingService) {
+  constructor(private bookingService: BookingService, private router: Router) {
   }
 
   ngOnInit(): void {
-    this.getDates();
-    // console.log('jerwk');
   }
 
   handleDateChange(arg: DatesSetArg) {
@@ -42,35 +40,71 @@ export class BookingDateComponent implements OnInit {
     this.currentYear = startDate.getFullYear().toString();
     
     let date: Array<string> = [this.currentMonth, this.currentYear];
-    this.getFullyBookedDatesByMonth(date);
+    this.getBookedDatesByMonth(date);
   }
 
-  getFullyBookedDatesByMonth(date: Array<string>) {
+  getBookedDatesByMonth(date: Array<string>): void {
     // service
-    this.bookingService.getFullyBookedDatesByMonth(date).subscribe(dates => {
-      console.log(dates);
+    this.bookingService.getBookedDatesByMonth(date).subscribe(dates => {
+      let finalDates: any[] = [];
+
+      Object.keys(dates).forEach((key: any) => {
+        let value: number = Number.parseInt(dates[key]);
+         // do something with key or value
+        if (value > 1) {
+          key = key.toString().replaceAll(',', '-');
+          let date = {
+            title: "Fully Booked",
+            date: key
+          }
+          finalDates.push(date);
+        }
+      });
+
+      this.calendarOptions.events = finalDates;
+      console.log(finalDates);
     });
   }
 
-  handleDateClick(arg: any) {
-    if (this.dates.length < 10) {
-      alert('date click! ' + arg.dateStr)
+  handleDateClick(arg: any): void {
+    if (!arg.dayEl.innerText.includes('Fully Booked')) {
+      
+      let dateSelected = arg.dateStr;
+
+      let date = new Date(dateSelected);
+      this.chosenDay = date.toString().split('02:00:00')[0]; // only interested in the day, date, month and year
+
+      let formattedTimeStamp = this.formatDateStringToTimestamp(date.toString());
+      this.dateSessionObject = formattedTimeStamp;
     } else {
-      alert('This day is fully booked')
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'This day is fully booked',
+      })
     }
   }
 
-  getDates() {
-    this.bookingService.getLatestDayDates().subscribe(dates => {
-      this.dates = dates;
+  formatDateStringToTimestamp(dateString: string): string {
+    let date = new Date(dateString);
 
-      this.dates.forEach(date => {
-        const formattedDate = new Date(date); 
-        let day = (formattedDate.getDate());
-        let month = (formattedDate.getMonth());
-        let year = (formattedDate.getFullYear());
-      });
-    });
+    let year = date.getFullYear();
+    let month = String(date.getMonth() + 1).padStart(2, '0');
+    let day = String(date.getDate()).padStart(2, '0');
+
+    let hours = String(date.getHours()).padStart(2, '0');
+    let minutes = String(date.getMinutes()).padStart(2, '0');
+    let seconds = String(date.getSeconds()).padStart(2, '0');
+    let milliseconds = String(date.getMilliseconds()).padStart(3, '0');
+
+    let formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}.${milliseconds}`;
+
+    return formattedDate;
+  }
+
+  confirm() {
+    sessionStorage.setItem('date', this.dateSessionObject);
+    this.router.navigate(['/booking']);
   }
 
 }

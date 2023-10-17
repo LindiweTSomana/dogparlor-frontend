@@ -23,7 +23,7 @@ export class BookingService {
     return this.http.get<any>(this._url + 'get-dates');
   }
 
-  getFullyBookedDatesByMonth(date: Array<string>): Observable<string[]> {
+  getBookedDatesByMonth(date: Array<string>): Observable<string[]> {
     return this.http.post<string[]>(this._url + 'unavailable-dates', date);
   }
 }

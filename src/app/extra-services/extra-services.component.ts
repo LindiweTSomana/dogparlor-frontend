@@ -63,7 +63,7 @@ export class ExtraServicesComponent implements OnInit {
       sessionStorage.setItem('total', JSON.stringify(this.totalPrice));
       sessionStorage.setItem('dog', dogTag);
       alert('Items added to cart');
-      this.router.navigate(['/booking']);
+      this.router.navigate(['/booking-date']);
     } else {
       this.router.navigate(['/login']);
     }
