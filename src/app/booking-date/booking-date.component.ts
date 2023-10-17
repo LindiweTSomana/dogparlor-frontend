@@ -44,14 +44,12 @@ export class BookingDateComponent implements OnInit {
   }
 
   getBookedDatesByMonth(date: Array<string>): void {
-    // service
     this.bookingService.getBookedDatesByMonth(date).subscribe(dates => {
       let finalDates: any[] = [];
 
       Object.keys(dates).forEach((key: any) => {
         let value: number = Number.parseInt(dates[key]);
-         // do something with key or value
-        if (value > 1) {
+        if (value > 9) {
           key = key.toString().replaceAll(',', '-');
           let date = {
             title: "Fully Booked",
@@ -66,9 +64,32 @@ export class BookingDateComponent implements OnInit {
     });
   }
 
+  hadDatePassed(date: string) {
+    const givenDateString = date;
+    const givenDate = new Date(givenDateString);
+    const currentDate = new Date();
+
+    if (givenDate < currentDate) {
+        return ('passed');
+    } else if (givenDate > currentDate) {
+        return ('not passed');
+    } else {
+        return ('current');
+    }
+  }
+
   handleDateClick(arg: any): void {
-    if (!arg.dayEl.innerText.includes('Fully Booked')) {
-      
+    let dateChosen = arg.dateStr;
+    let status = this.hadDatePassed(dateChosen)
+
+    if (status === 'passed') {
+      Swal.fire({
+        title: '<strong>This date has passed already</u></strong>',
+        icon: 'info',
+        showCloseButton: true,
+        focusConfirm: false,
+      })
+    } else if (!arg.dayEl.innerText.includes('Fully Booked')) {
       let dateSelected = arg.dateStr;
 
       let date = new Date(dateSelected);
@@ -104,7 +125,17 @@ export class BookingDateComponent implements OnInit {
 
   confirm() {
     sessionStorage.setItem('date', this.dateSessionObject);
-    this.router.navigate(['/booking']);
+
+    if (this.dateSessionObject) {
+      this.router.navigate(['/booking']);
+    } else {
+      Swal.fire({
+        title: '<strong>Please select date</u></strong>',
+        icon: 'info',
+        showCloseButton: true,
+        focusConfirm: false,
+      })
+    }
   }
 
 }
