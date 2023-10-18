@@ -28,7 +28,7 @@ export class AddNewStaffComponent implements OnInit {
   }
 
   addStaff(addForm: NgForm): void {
-    console.log(addForm.value);
+    
     const staff: Staff = {
       firstName: addForm.value.fname,
       lastName: addForm.value.lname,
