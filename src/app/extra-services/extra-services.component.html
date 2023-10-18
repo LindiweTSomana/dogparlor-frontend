@@ -14,7 +14,9 @@
                     <option value="{{dog | json}}" *ngFor="let dog of dogList">{{ dog.dogName }}</option>
                 </select>
 
-                <span>Medium Dog - Long hair</span><br>
+                <div><b>Dog Size:</b> {{ selectedDog.dogSize }}</div>
+                <div><b>Hair:</b> {{ selectedDog.hairLength }}</div>
+                <br>
             </div>
            
             <img src="../assets/images/small-dog-short-hair.png" style="height: 100px; width: 100px;" alt="" >
@@ -34,7 +36,7 @@
             </div>
             <div class="btn">
                 <br>
-                <button class="button" (click)="addToCart(dog.value)">Add to cart</button>
+                <button class="button" (click)="addToCart(dog.value)" [disabled]="!dog.value">Add to cart</button>
             </div>
             
         </div>

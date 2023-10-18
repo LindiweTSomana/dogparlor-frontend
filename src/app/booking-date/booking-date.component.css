@@ -1,6 +1,7 @@
 full-calendar {
     max-width: 800px;
     margin: auto;
+    cursor: pointer;
 }
 
 h1 {
@@ -25,4 +26,8 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+p {
+    font-size: large;
 }

@@ -1,17 +1,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <nav>
-    <img src ="../assets/logo3.png" width="120" height="80"/>
+    <img src ="../assets/logo3.png" width="40" height="40"/>
     <div class="navbar">
 
     <ul>
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Services</a>
-        <a href="">Schedule Booking</a>
-        <a href="">Contact</a>
-        <a href="">Gallery</a>
-        <a href="#"><i class="fa fa-fw fa-user"></i>Login</a>
+        <a routerLink="/">Home</a>
+        <a routerLink="#">About</a>
+        <a href="/contact">Contact</a>
+        <a routerLink="/profile">Profile</a>
+        <a href="/login"><i class="fa fa-fw fa-user"></i>{{ logStatus }}</a>
         <input type="text" placeholder="Search..">
 </ul>
 </div>

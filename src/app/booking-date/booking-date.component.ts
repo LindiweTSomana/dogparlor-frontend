@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { CalendarOptions, DateSelectArg, DatesSetArg } from '@fullcalendar/core'; // useful for typechecking
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { CalendarOptions, DateSelectArg, DatesSetArg, EventContentArg, EventApi } from '@fullcalendar/core'; // useful for typechecking
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { BookingService } from '../services/booking/booking.service';
 import * as moment from 'moment';
 import Swal from 'sweetalert2';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking-date',
@@ -21,11 +21,14 @@ export class BookingDateComponent implements OnInit {
     plugins: [dayGridPlugin, interactionPlugin],
   };
 
+  // FullCalendarComponent
+
   chosenDay: String = '';
   dates: Array<Date> = [];
   currentMonth: string = '';
   currentYear: string = '';
   dateSessionObject: string = '';
+  someSubscription: any;
 
   constructor(private bookingService: BookingService, private router: Router) {
   }
@@ -49,7 +52,7 @@ export class BookingDateComponent implements OnInit {
 
       Object.keys(dates).forEach((key: any) => {
         let value: number = Number.parseInt(dates[key]);
-        if (value > 9) {
+        if (value >= 10) {
           key = key.toString().replaceAll(',', '-');
           let date = {
             title: "Fully Booked",
@@ -79,8 +82,9 @@ export class BookingDateComponent implements OnInit {
   }
 
   handleDateClick(arg: any): void {
+
     let dateChosen = arg.dateStr;
-    let status = this.hadDatePassed(dateChosen)
+    let status = this.hadDatePassed(dateChosen);
 
     if (status === 'passed') {
       Swal.fire({
@@ -104,6 +108,7 @@ export class BookingDateComponent implements OnInit {
         text: 'This day is fully booked',
       })
     }
+
   }
 
   formatDateStringToTimestamp(dateString: string): string {

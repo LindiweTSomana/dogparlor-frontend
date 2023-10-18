@@ -51,6 +51,7 @@ const routes: Routes = [
   {
     path: 'edit-staff',
     component: EditStaffComponent
+  },
   {
     path: 'staff',
     component: StaffDashboardComponent

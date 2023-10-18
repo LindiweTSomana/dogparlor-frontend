@@ -28,10 +28,11 @@ export class AddNewStaffComponent implements OnInit {
   }
 
   addStaff(addForm: NgForm): void {
+    console.log(addForm.value);
     const staff: Staff = {
       firstName: addForm.value.fname,
       lastName: addForm.value.lname,
-      speciality: addForm.value.specialty,
+      speciality: addForm.value.speciality,
       role: [
         {
           roleID: addForm.value.role.split(',')[0],

@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { Booking } from 'src/app/models/Booking';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -14,8 +13,8 @@ export class BookingService {
 
   constructor(private http: HttpClient) { }
 
-  getBooking(): Observable<BookingService[]> {
-    return this.http.get<BookingService[]>(this._url + 'getall');
+  getBooking(): Observable<Booking[]> {
+    return this.http.get<Booking[]>(this._url + 'getall');
   }
 
   getBookingById(bookingID:any): Observable<any[]> {

@@ -23,7 +23,7 @@ export class ViewBookingsComponent implements OnInit {
     this.getStaff();
     this.getBookings();
     
-
+    console.log(this.bookings);
   }
 
   getStaff() {
@@ -31,8 +31,10 @@ export class ViewBookingsComponent implements OnInit {
     
   }
   getBookings() {
-    this.bookingService.getBooking().subscribe(data => this.bookings = data);
-    
+    this.bookingService.getBooking().subscribe(data => {
+      console.log(data[0].dog);
+      this.bookings = data
+    });
   }
 
  assignStaff(booking:any , staff:any){

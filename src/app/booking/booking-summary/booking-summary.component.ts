@@ -63,13 +63,15 @@ export class BookingSummaryComponent implements OnInit {
     this.user = JSON.parse(localStorage.getItem('customer') || '{}');
   }
 
-  book() {
+
+  getBookingInformation() {
     const originalDate = new Date(sessionStorage.getItem('date')!);
     const isoDate = originalDate.toISOString();
 
     let booking = {
       dog: {
-        dogTag: sessionStorage.getItem('dog')
+        dogTag: sessionStorage.getItem('dog'),
+        customer: JSON.parse(localStorage.getItem('customer') || '')
       },
       bookingDate: isoDate,
       staffList: [],
@@ -77,7 +79,14 @@ export class BookingSummaryComponent implements OnInit {
       extraServices: this.extraServices,
       total: this.total
     }
-    
+
+    console.log(booking);
+
+    this.book(booking);
+  }
+
+  book(booking: any) {
+  
     this.bookingService.createBooking(booking).pipe(
       catchError((error) => {
         if (error.status === 404) {

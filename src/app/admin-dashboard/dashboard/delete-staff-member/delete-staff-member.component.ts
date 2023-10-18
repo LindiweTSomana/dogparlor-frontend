@@ -23,7 +23,7 @@ export class DeleteStaffMemberComponent implements OnInit {
   
   getAllMembers(){
     this.staffservice.getStaff().subscribe((result)=>{
-      this.members = result;
+      // this.members = result;
     })
   }
 

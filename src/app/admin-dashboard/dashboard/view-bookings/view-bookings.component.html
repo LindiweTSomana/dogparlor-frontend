@@ -9,6 +9,7 @@
                     <!--<th>Booking ID</th>-->
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Dog Name</th>
                     <th>Booking Date</th>
                     <th>Service Name</th>
                     <th>Service Description</th>
@@ -20,10 +21,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let booking of bookings ">
+                <tr *ngFor="let booking of bookings">
                     <!--<td id="bookingID">{{bookings.bookingID}}</td>-->
-                    <td id="firstName">{{booking.customer.firstName}}</td>
-                    <td id="lastName">{{booking.customer.lastName}}</td>
+                    <td id="firstName">{{booking.dog.customer.firstName}}</td>
+                    <td id="lastName">{{booking.dog.customer.lastName}}</td>
+                    <td id="dogName">{{booking.dog.dogName}}</td>
                     <td id="bookingDate">{{booking.bookingDate}}</td>
                     <td id="serviceName">{{booking.groomServices[0]?.name}}</td>
                     <td id="serviceDescription">{{booking.groomServices[0]?.description}}</td>

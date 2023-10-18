@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Dog } from '../models/Dog';
 import { DogService } from '../services/dog/dog.service';
 import { Customer } from '../models/Customer';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-extra-services',
@@ -57,15 +58,23 @@ export class ExtraServicesComponent implements OnInit {
   }
 
   addToCart(dog: any) {
-    const dogTag = JSON.parse(dog).dogTag;
-    if (localStorage.getItem('customer')) {
-      sessionStorage.setItem('extra_services', JSON.stringify(this.selectedExtraServices));
-      sessionStorage.setItem('total', JSON.stringify(this.totalPrice));
-      sessionStorage.setItem('dog', dogTag);
-      alert('Items added to cart');
-      this.router.navigate(['/booking-date']);
+    if (this.selectedDog.keys === 0) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please select dog'
+      });
     } else {
-      this.router.navigate(['/login']);
+      const dogTag = JSON.parse(dog).dogTag;
+      if (localStorage.getItem('customer')) {
+        sessionStorage.setItem('extra_services', JSON.stringify(this.selectedExtraServices));
+        sessionStorage.setItem('total', JSON.stringify(this.totalPrice));
+        sessionStorage.setItem('dog', dogTag);
+        alert('Items added to cart');
+        this.router.navigate(['/booking-date']);
+      } else {
+        this.router.navigate(['/login']);
+      }
     }
   }
 
@@ -84,25 +93,27 @@ export class ExtraServicesComponent implements OnInit {
   }
 
   onSelectDog(event: any) {
-    const selectedValue = event.target.value;
-    this.selectedDog = JSON.parse(selectedValue);
-    let total = 0;
+    if(event.target.value !== '') {
+      const selectedValue = event.target.value;
+      this.selectedDog = JSON.parse(selectedValue);
+      let total = 0;
 
-    if (this.selectedDog.hairLength === 'Short') {
-      this.totalPrice -= this.previous;
-      total += (20 + this.setPriceByDogSize(this.selectedDog.dogSize));
-      this.previous = total;
-    } else if (this.selectedDog.hairLength === 'Medium') {
-      this.totalPrice -= this.previous;
-      total += (35 + this.setPriceByDogSize(this.selectedDog.dogSize));
-      this.previous = total;
-    } else if (this.selectedDog.hairLength === 'Long') {
-      this.totalPrice -= this.previous;
-      total += (50 + this.setPriceByDogSize(this.selectedDog.dogSize));
-      this.previous = total;
-    }
+      if (this.selectedDog.hairLength === 'Short') {
+        this.totalPrice -= this.previous;
+        total += (20 + this.setPriceByDogSize(this.selectedDog.dogSize));
+        this.previous = total;
+      } else if (this.selectedDog.hairLength === 'Medium') {
+        this.totalPrice -= this.previous;
+        total += (35 + this.setPriceByDogSize(this.selectedDog.dogSize));
+        this.previous = total;
+      } else if (this.selectedDog.hairLength === 'Long') {
+        this.totalPrice -= this.previous;
+        total += (50 + this.setPriceByDogSize(this.selectedDog.dogSize));
+        this.previous = total;
+      }
 
-    this.totalPrice += total;    
+      this.totalPrice += total;
+    } 
   }
 
   displayDogDropdownIfLoggedIn() {
