@@ -24,6 +24,4 @@ export class StaffService {
     return this.http.post<Staff>(this._url + 'update', data);
   }
 
-  
-
 }

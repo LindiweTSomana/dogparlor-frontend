@@ -2,7 +2,8 @@
     <h1>{{ service.name }}</h1>
     <p>{{ service.description }}</p>
     <br>
-    <p>Total: {{ total | currency: 'ZAR' }}</p>
+    <p><b>Total:</b> {{ total | currency: 'ZAR' }}</p>
+    <p><b>Date chosen:</b> {{ dateChosen }}</p>
     <br>
     <h3>Extra services</h3>
     <ol>

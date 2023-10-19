@@ -10,31 +10,25 @@ import { CustomerService } from '../../../customer.service';
 })
 export class CustomerListComponent implements OnInit {
 
-
   _customers: any[] = []
 
-  constructor(private customerService: CustomerService) {}
+  constructor(private customerService: CustomerService) { }
 
+  ngOnInit(): void {
+    this.loadCustomers();
+  }
 
+  loadCustomers() {
+    this.customerService.getAllCustomers().subscribe((data: any[]) => {
+      this._customers = data;
+    });
+  }
 
-
-
-        ngOnInit(): void {
-          this.loadCustomers();
-        }
-
-        loadCustomers() {
-          this.customerService.getAllCustomers().subscribe((data: any[]) => {
-            this._customers = data;
-          });
-        }
-
-        deleteCustomer(customerId: number) {
-
-          this.customerService.deleteCustomer(customerId).subscribe(() => {
-
-            this.loadCustomers();
-          });
-        }
-      }
+  deleteCustomer(customerId: string) {
+    console.log(customerId);
+    this.customerService.deleteCustomer(customerId).subscribe(() => {
+      this.loadCustomers();
+    });
+  }
+}
 

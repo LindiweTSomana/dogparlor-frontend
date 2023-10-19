@@ -9,7 +9,7 @@ export class CustomerService {
   constructor(private http: HttpClient) {}
 
 
-  deleteCustomer(customerId: number): Observable<boolean> {
+  deleteCustomer(customerId: string): Observable<boolean> {
     return this.http.delete<boolean>('http://localhost:8080/customer/delete/' + customerId);
   }
 
