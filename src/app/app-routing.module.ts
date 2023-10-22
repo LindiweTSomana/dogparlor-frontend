@@ -18,6 +18,7 @@ import { authGuard } from './auth.guard';
 import { roleGuard } from './shared/role/role.guard';
 import { staffGuard } from './shared/role/staff.guard';
 import { customerGuard } from './shared/role/customer.guard';
+import { CustomerBookingHistoryTableComponent } from './profile/customer-booking-history-table/customer-booking-history-table.component';
 
 
 const routes: Routes = [
@@ -82,6 +83,10 @@ const routes: Routes = [
   {
     path: 'booking-date',
     component: BookingDateComponent
+  },
+  {
+    path: 'customer-booking-history-table',
+    component: CustomerBookingHistoryTableComponent
   }
 ];
 

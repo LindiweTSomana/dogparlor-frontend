@@ -27,6 +27,10 @@ export class BookingService {
   updateBooking(booking: any): Observable<BookingService> {
     return this.http.post<BookingService>(this._url + 'update', booking);
   }
+
+  deleteBooking(bookingID: string): Observable<boolean> {
+    return this.http.delete<boolean>(this._url + "delete/" + bookingID);
+  }
   
   getLatestDayDates():Observable<any> {
     return this.http.get<any>(this._url + 'get-dates');

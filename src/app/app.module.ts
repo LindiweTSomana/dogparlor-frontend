@@ -43,6 +43,7 @@ import { StaffTaskComponent } from './admin-dashboard/dashboard/staff-task/staff
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { BookingDateComponent } from './booking-date/booking-date.component';
 import { TokenInterceptorService } from './shared/interceptor/token-interceptor.service';
+import { CustomerBookingHistoryTableComponent } from './profile/customer-booking-history-table/customer-booking-history-table.component';
 
 
 @NgModule({
@@ -83,6 +84,7 @@ import { TokenInterceptorService } from './shared/interceptor/token-interceptor.
     DeleteStaffMemberComponent,
     StaffTaskComponent,
     BookingDateComponent,
+    CustomerBookingHistoryTableComponent,
   ],
   imports: [
     BrowserModule,
