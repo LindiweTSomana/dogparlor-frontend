@@ -38,6 +38,8 @@ export class BookingSummaryComponent implements OnInit {
 
   total: number = 0;
 
+  dateChosen: string = (sessionStorage.getItem('date') || '').split(' ')[0];
+
   constructor(private bookingService: BookingService, private router: Router) {}
 
   ngOnInit(): void {

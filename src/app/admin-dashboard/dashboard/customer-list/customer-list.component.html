@@ -1,8 +1,6 @@
 <h1>Employees List</h1>
 
-
-<div *ngFor="let customer of _customers">
-
+  
 
 
   <html lang="en">
@@ -13,7 +11,7 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
+        /* background-color: #f9f9f9; */
         margin: 0;
         padding: 0;
       }
@@ -67,8 +65,8 @@
       }
     </style>
   </head>
-  <body>
 
+    <div *ngFor="let customer of _customers">
 
   <div class="container">
 
@@ -76,8 +74,5 @@
     <p><strong>First Name:</strong> {{ customer.firstName }}</p>
     <p><strong>Last Name:</strong> {{ customer.lastName }}</p>
 
-
-    <button class="delete-button" (click)="deleteCustomer(customer.id)">Delete</button>
+    <button class="delete-button" (click)="deleteCustomer(customer.customerID)">Delete</button>
   </div>
-  </body>
-  </html>
