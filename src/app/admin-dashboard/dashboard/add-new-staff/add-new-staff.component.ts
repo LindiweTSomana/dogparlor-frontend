@@ -30,6 +30,10 @@ export class AddNewStaffComponent implements OnInit {
   addStaff(addForm: NgForm): void {
     
     const staff: Staff = {
+      user: {
+        username: addForm.value.username,
+        password: addForm.value.password
+      },
       firstName: addForm.value.fname,
       lastName: addForm.value.lname,
       speciality: addForm.value.speciality,
@@ -40,6 +44,8 @@ export class AddNewStaffComponent implements OnInit {
         }
       ]
     }
+
+    console.log(staff);
 
     this.staffService.addStaff(staff).subscribe((result) => {
       if (result != null) {

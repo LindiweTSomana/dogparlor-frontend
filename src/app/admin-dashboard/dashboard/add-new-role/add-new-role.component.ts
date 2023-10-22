@@ -14,9 +14,10 @@ export class AddNewRoleComponent {
   constructor(private roleService: RoleService) { 
   }
   addRole(addRoleForm: NgForm): void {
+    console.log(addRoleForm.value.NewRole);
     const role: Role = {
-         roleID: addRoleForm.value.role.split(',')[0],
-         name: addRoleForm.value.role.split(',')[1]
+         roleID: addRoleForm.value.NewRole,
+         name: addRoleForm.value.RoleName
     }
 
     this.roleService.addRole(role).subscribe((result) => {

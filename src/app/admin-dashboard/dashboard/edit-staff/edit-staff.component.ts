@@ -21,7 +21,8 @@ export class EditStaffComponent implements OnInit  {
   staffList: Array<any> = [];
   roles:Array<Role> = [];
 
-  staffToUpdate:Staff ={
+  staffToUpdate:Staff = {
+    user: {},
     firstName: "",
     lastName: "",
     speciality: "",

@@ -15,7 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { AddNewStaffComponent } from './admin-dashboard/dashboard/add-new-staff/add-new-staff.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BookingComponent } from './booking/booking.component';
 import { AddressFormComponent } from './booking/address-form/address-form.component';
@@ -42,6 +42,7 @@ import { DeleteStaffMemberComponent } from './admin-dashboard/dashboard/delete-s
 import { StaffTaskComponent } from './admin-dashboard/dashboard/staff-task/staff-task.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { BookingDateComponent } from './booking-date/booking-date.component';
+import { TokenInterceptorService } from './shared/interceptor/token-interceptor.service';
 
 
 @NgModule({
@@ -92,7 +93,7 @@ import { BookingDateComponent } from './booking-date/booking-date.component';
     MatDialogModule,
     FullCalendarModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

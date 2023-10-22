@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { PopupUserDetailsComponent } from './popup-user-details/popup-user-details.component';
 
 @Component({
   selector: 'app-profile',
@@ -22,10 +21,15 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let user = JSON.parse(localStorage.getItem("customer") || "{}");
+    let token = localStorage.getItem("token") || "{}";
+    console.log(token);
+    let extractedToken = token.split('.')[1];
+    let atobdata = atob(extractedToken);
+    console.log(atobdata);
+    let user = JSON.parse(atobdata).customer; 
+    console.log(user);
+    
     this.user = user;
-    console.log(this.user);
-    console.log(this.data);
   }
 
   openUserDialog() {

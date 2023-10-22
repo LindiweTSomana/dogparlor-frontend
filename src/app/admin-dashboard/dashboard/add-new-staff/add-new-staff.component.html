@@ -10,5 +10,8 @@
         <option  *ngFor="let role of roles" [value]="role.roleID + ',' + role.name">{{role.name}}</option>
     </select>
 
+    <input type="text" ngModel name="username" placeholder="Username">
+    <input type="password" ngModel name="password" placeholder="Password">
+
     <button type="submit">Add Staff</button>
 </form>

@@ -14,6 +14,10 @@ import {RolesComponent} from "./admin-dashboard/dashboard/roles/roles.component"
 import { DeleteStaffMemberComponent } from './admin-dashboard/dashboard/delete-staff-member/delete-staff-member.component';
 import { StaffTaskComponent } from './admin-dashboard/dashboard/staff-task/staff-task.component';
 import { BookingDateComponent } from './booking-date/booking-date.component';
+import { authGuard } from './auth.guard';
+import { roleGuard } from './shared/role/role.guard';
+import { staffGuard } from './shared/role/staff.guard';
+import { customerGuard } from './shared/role/customer.guard';
 
 
 const routes: Routes = [
@@ -26,7 +30,8 @@ const routes: Routes = [
     path: 'admin',
     component: AdminDashboardComponent , children: [
       { path: 'view-bookings', component: ViewBookingsComponent }
-    ]
+    ],
+    canActivate: [roleGuard]
   },
   {
     path: 'home',
@@ -54,11 +59,13 @@ const routes: Routes = [
   },
   {
     path: 'staff',
-    component: StaffDashboardComponent
+    component: StaffDashboardComponent,
+    canActivate: [staffGuard]
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [customerGuard]
   },
   {
     path: 'roles',

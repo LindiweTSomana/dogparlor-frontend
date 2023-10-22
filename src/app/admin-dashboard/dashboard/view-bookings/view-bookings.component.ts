@@ -16,13 +16,13 @@ export class ViewBookingsComponent implements OnInit {
   bookings: Array<any> = [];
   selectedStaff:any;
  
- 
   constructor(private staffService: StaffService, private bookingService: BookingService) {
   }
   ngOnInit(): void {
     this.getStaff();
     this.getBookings();
-    
+    let c = localStorage.getItem('token') || '{}';
+    console.log(c)
     console.log(this.bookings);
   }
 

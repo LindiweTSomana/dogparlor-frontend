@@ -8,13 +8,12 @@ import { Role } from 'src/app/models/role';
 })
 export class RoleService {
 
-  private _url = "http://localhost:8080/role/getall";
-  private url = "http://localhost:8080/role/delete";
+  private _url = "http://localhost:8080/role/";
 
   constructor(private http: HttpClient) { }
 
   getRoles(): Observable<Role[]> {
-    return this.http.get<Role[]>(this._url);
+    return this.http.get<Role[]>(this._url + 'getall');
   }
   
   addRole(data: Role): Observable<Role> {
@@ -22,7 +21,7 @@ export class RoleService {
   }
 
   deleteRole(roleid: number) {
-    const url = `${this.url}/${roleid}`;
+    const url = `${this._url}/delete/${roleid}`;
     return this.http.delete(url);
   }
 
