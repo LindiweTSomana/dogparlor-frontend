@@ -37,6 +37,12 @@
         <button (click)="activateAddDogPopup()" class="add-dog-btn">Add a new dog</button>
         <app-dog-table (childEvent)="isDogPopupOpened=$event"></app-dog-table>
     </div>
+
+
+    <div class="table">
+        <app-customer-booking-history-table></app-customer-booking-history-table>
+    </div>
+   
 </div>
 
 <div class="overlay" *ngIf="isUserPopupOpened || isDogPopupOpened || isAddDogPopupOpened" (click)="closeDialog()"></div>

@@ -14,6 +14,7 @@ import {RolesComponent} from "./admin-dashboard/dashboard/roles/roles.component"
 import { DeleteStaffMemberComponent } from './admin-dashboard/dashboard/delete-staff-member/delete-staff-member.component';
 import { StaffTaskComponent } from './admin-dashboard/dashboard/staff-task/staff-task.component';
 import { BookingDateComponent } from './booking-date/booking-date.component';
+import { CustomerBookingHistoryTableComponent } from './profile/customer-booking-history-table/customer-booking-history-table.component';
 
 
 const routes: Routes = [
@@ -75,6 +76,10 @@ const routes: Routes = [
   {
     path: 'booking-date',
     component: BookingDateComponent
+  },
+  {
+    path: 'customer-booking-history-table',
+    component: CustomerBookingHistoryTableComponent
   }
 ];
 

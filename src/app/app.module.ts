@@ -42,6 +42,7 @@ import { DeleteStaffMemberComponent } from './admin-dashboard/dashboard/delete-s
 import { StaffTaskComponent } from './admin-dashboard/dashboard/staff-task/staff-task.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { BookingDateComponent } from './booking-date/booking-date.component';
+import { CustomerBookingHistoryTableComponent } from './profile/customer-booking-history-table/customer-booking-history-table.component';
 
 
 @NgModule({
@@ -82,6 +83,7 @@ import { BookingDateComponent } from './booking-date/booking-date.component';
     DeleteStaffMemberComponent,
     StaffTaskComponent,
     BookingDateComponent,
+    CustomerBookingHistoryTableComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,26 @@
+<h1>Customer Booking History</h1>
+
+<table id="booking-history">
+    <tr  >
+        <th>No.</th>
+        <th>Booking Date</th>
+        <th>Dog Name</th>
+        <th>Service</th>
+        <th>Extra Services</th>
+        <th>Total Price</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let booking of bookings; let i = index">
+        <td>{{ i + 1 }}</td> 
+        <td>{{booking.bookingDate}}</td>
+        <td>{{booking.dog.dogName}}</td>
+        <td>{{booking.groomServices[0]?.name}}</td>
+        <td>{{booking.extraServices[0]?.extraServiceName}}</td>
+        <td>{{booking.total}}</td>
+        <td>
+            <div class="action-wrap">
+                <button (click)="deleteBooking(booking.bookingID)">Delete</button>
+            </div>
+        </td>
+    </tr>
+</table>

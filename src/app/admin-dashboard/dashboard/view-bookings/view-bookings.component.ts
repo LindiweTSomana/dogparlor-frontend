@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 export class ViewBookingsComponent implements OnInit {
   staffList: Array<any> = [];
   bookings: Array<any> = [];
-  selectedStaff:any;
+
  
  
   constructor(private staffService: StaffService, private bookingService: BookingService) {
