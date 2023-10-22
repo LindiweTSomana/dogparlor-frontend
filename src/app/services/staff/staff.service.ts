@@ -24,4 +24,8 @@ export class StaffService {
     return this.http.post<Staff>(this._url + 'update', data);
   }
 
+deleteStaff(staffNumber:string): Observable<boolean> {
+    return this.http.delete<boolean>(this._url + 'delete/'+ staffNumber);
+  }
+
 }

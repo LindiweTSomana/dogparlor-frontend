@@ -7,7 +7,7 @@ nav {
 
 nav img {
   float: left;
-  margin: 0 8px;
+  margin: 0 25px;
   border-radius: 50%;
 }
 
@@ -16,14 +16,17 @@ nav a {
   text-align: center;
   padding: 10px 12px;
   text-decoration: none;
-  font-size: 17px;
-  float: left
+  font-size: 20px;
+  float: left;
+  font-family: roboto;
+  
 }
 
 nav a:hover {
-  border-radius: 15px;
-  background-color: #A6ACAF;
-  color: #212F3C;
+  /* border-radius: 15px; */
+  /*background-color: #A6ACAF;*/
+  color: #84ceeb;
+  transition: 0.5s;
 }
 
 nav input[type=text] {
@@ -38,4 +41,8 @@ nav input[type=text] {
 
 nav input[type=text] {
   border: 1px solid #ccc;
+}
+
+ul {
+  line-height: 45px;
 }
