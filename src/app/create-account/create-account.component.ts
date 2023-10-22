@@ -37,6 +37,10 @@ export class CreateAccountComponent implements OnInit {
     }
 
     let customer: Customer = {
+      user: {
+        username: createdUser.value.username,
+        password: createdUser.value.password
+      },
       firstName: createdUser.value.firstName,
       lastName: createdUser.value.lastName,
       contacts: [],

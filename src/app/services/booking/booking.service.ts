@@ -39,4 +39,8 @@ export class BookingService {
   getBookedDatesByMonth(date: Array<string>): Observable<string[]> {
     return this.http.post<string[]>(this._url + 'unavailable-dates', date);
   }
+
+  getBookingsByStaffNumber(staffNumber: string): Observable<string[]> {
+    return this.http.get<any>(this._url + 'get-bookings-by-staff-id/' + staffNumber);
+  }
 }

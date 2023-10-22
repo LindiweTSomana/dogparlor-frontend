@@ -24,7 +24,8 @@ export class AddPopupDogDetailsComponent implements OnInit {
   }
 
   constructor(private dogService: DogService) {
-    this.customer = JSON.parse(localStorage.getItem('customer') || '{}');
+    this.customer = JSON.parse(atob((localStorage.getItem('token') || '{}').split('.')[1])).customer;
+    console.log(this.customer);
   }
 
   ngOnInit(): void {
@@ -78,6 +79,8 @@ export class AddPopupDogDetailsComponent implements OnInit {
 
   addDetails(dogParam: NgForm) {
     const isThereAnEmptyField = this.isEmpty(dogParam.value);
+
+    console.log(this.customer);
 
     if (isThereAnEmptyField) {
       this.removeRedFieldBorder(3); // will remove after 3

@@ -15,7 +15,7 @@ export class PopupUserDetailsComponent {
   customer: Customer;
 
   constructor(private customerService: CustomerService) {
-    this.customer = JSON.parse(localStorage.getItem('customer') || '{}');
+    this.customer = JSON.parse(atob((localStorage.getItem('token') || '{}').split('.')[1])).customer;
   }
 
   editUser(user: NgForm) {
@@ -46,19 +46,24 @@ export class PopupUserDetailsComponent {
     
     const updatedUser: Customer = {
       customerID: this.customer.customerID,
+      user: this.customer.user,
       firstName: !user.value.firstName ? this.customer.firstName : user.value.firstName,
       lastName: !user.value.lastName ? this.customer.lastName : user.value.lastName,
       contacts: [],
       addresses: []
     };
 
-    if (email) {
+    console.log(updatedUser);
+
+    if (email.contactValue) {
       updatedUser.contacts.push(email);
     }
 
-    if (phone) {
+    if (phone.contactValue) {
       updatedUser.contacts.push(phone);
     }
+
+    console.log(updatedUser);
 
     this.customerService.updateCustomer(updatedUser).subscribe(data => {
       if (data !== null) {
@@ -67,7 +72,7 @@ export class PopupUserDetailsComponent {
           'Information updated',
           'success'
         ).then((result) => {
-          this.updateInLocalStorage(data);
+          // this.updateInLocalStorage(data);
           location.reload();
         });        
       } else {

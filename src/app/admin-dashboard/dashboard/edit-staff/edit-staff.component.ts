@@ -76,8 +76,6 @@ export class EditStaffComponent implements OnInit  {
           'Successful!',
           'Staff member successfully updated',
           'success'
-
-
         ).then(() => {
 
           location.reload();

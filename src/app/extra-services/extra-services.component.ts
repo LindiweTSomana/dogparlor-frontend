@@ -66,7 +66,7 @@ export class ExtraServicesComponent implements OnInit {
       });
     } else {
       const dogTag = JSON.parse(dog).dogTag;
-      if (localStorage.getItem('customer')) {
+      if (JSON.parse(atob((localStorage.getItem('token') || '{}').split('.')[1])).customer) {
         sessionStorage.setItem('extra_services', JSON.stringify(this.selectedExtraServices));
         sessionStorage.setItem('total', JSON.stringify(this.totalPrice));
         sessionStorage.setItem('dog', dogTag);
@@ -117,7 +117,7 @@ export class ExtraServicesComponent implements OnInit {
   }
 
   displayDogDropdownIfLoggedIn() {
-    let customer: Customer = JSON.parse(localStorage.getItem('customer') || '{}');
+    let customer: Customer = JSON.parse(atob((localStorage.getItem('token') || '{}').split('.')[1])).customer;
     if (customer) {
       this.dogService.getAllDogsByCustomer(customer).subscribe(dogs => {
         this.dogList = dogs;

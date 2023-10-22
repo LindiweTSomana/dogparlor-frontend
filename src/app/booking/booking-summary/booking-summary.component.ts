@@ -30,6 +30,7 @@ export class BookingSummaryComponent implements OnInit {
   }]
 
   user: Customer = {
+    user: {},
     firstName: '',
     lastName: '',
     contacts: [],
@@ -62,7 +63,7 @@ export class BookingSummaryComponent implements OnInit {
   }
 
   getLoggedInUser() {
-    this.user = JSON.parse(localStorage.getItem('customer') || '{}');
+    this.user = JSON.parse(atob((localStorage.getItem('token') || '{}').split('.')[1])).customer;
   }
 
 
@@ -73,7 +74,7 @@ export class BookingSummaryComponent implements OnInit {
     let booking = {
       dog: {
         dogTag: sessionStorage.getItem('dog'),
-        customer: JSON.parse(localStorage.getItem('customer') || '')
+        customer: this.getLoggedInUser()
       },
       bookingDate: isoDate,
       staffList: [],
@@ -93,7 +94,6 @@ export class BookingSummaryComponent implements OnInit {
       catchError((error) => {
         if (error.status === 404) {
           console.error('Resource not found:', error);
-          // Display a user-friendly "Not Found" message
           this.router.navigate(['/404']);
         } else {
           console.error('An error occurred:', error);
@@ -106,7 +106,6 @@ export class BookingSummaryComponent implements OnInit {
         return throwError(error);
       })
     ).subscribe(() => {
-        // Handle successful response
         Swal.fire(
           'Successful!',
           'Booking has been successfully made',

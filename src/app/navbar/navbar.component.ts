@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   }
 
   checkIfSomeoneLoggedIn() {
-    const res = localStorage.getItem('customer');
+    const res = localStorage.getItem('token');
     if (res !== null) {
       this.logStatus = 'Logout';
     }
@@ -23,5 +23,6 @@ export class NavbarComponent implements OnInit {
 
   logOut() {
     localStorage.removeItem('customer');
+    localStorage.removeItem('token');
   }
 }

@@ -14,21 +14,21 @@ export class AddressFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkAddressStatus();
-    let addresses = JSON.parse(localStorage.getItem('customer') || '{}').addresses;
+    let addresses = JSON.parse(atob((localStorage.getItem('token') || '{}').split('.')[1])).customer.addresses;
     this.userAddress = addresses[0];
   }
 
   checkAddressStatus() {
-    let loggedUser = localStorage.getItem('customer') || '{}';
-    let customer = JSON.parse(loggedUser);
+    // let loggedUser = JSON.parse(atob((localStorage.getItem('token') || '{}').split('.')[1])).customer;
+    let customer = JSON.parse(atob((localStorage.getItem('token') || '{}').split('.')[1])).customer;
     this.isAddressEmpty = customer.addresses.length === 0;
   }
 
   addAddress(addForm: NgForm) {
     let addresstype = addForm.value.addressType;
 
-    let loggedUser = localStorage.getItem('customer') || '{}';
-    let customer = JSON.parse(loggedUser);
+    // let loggedUser = JSON.parse(atob((localStorage.getItem('token') || '{}').split('.')[1])).customer;
+    let customer = JSON.parse(atob((localStorage.getItem('token') || '{}').split('.')[1])).customer;
 
     let address: any = {
       addressValue: addForm.value.addressLine,
@@ -42,7 +42,6 @@ export class AddressFormComponent implements OnInit {
       zipcode: addForm.value.zipcode,
       city: addForm.value.city
     }
-    
     
     customer.addresses[0] = address;
 

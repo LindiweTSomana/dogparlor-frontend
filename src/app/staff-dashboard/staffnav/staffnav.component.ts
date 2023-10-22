@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class StaffnavComponent {
 
+  username = ''
+
+  constructor() {
+    this.username = JSON.parse(atob((localStorage.getItem('token') || '{}').split('.')[1])).staff.user.username;
+  }
+
 }

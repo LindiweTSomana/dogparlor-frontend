@@ -9,7 +9,7 @@
         <a routerLink="#">About</a>
         <a href="/contact">Contact</a>
         <a routerLink="/profile">Profile</a>
-        <a href="/login"><i class="fa fa-fw fa-user"></i>{{ logStatus }}</a>
+        <a href="/login" (click)="logOut()"><i class="fa fa-fw fa-user"></i>{{ logStatus }}</a>
       
     </ul>
 </div>

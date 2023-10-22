@@ -1,5 +1,29 @@
 <div class="dashboard-wrapper">
     <h1>Staff Dashboard</h1>
 <!-- staff dashboard components-->
+
+    <div class="cards">
+        <h2>Your Tasks</h2>
+        <div class="card" *ngFor="let booking of staffBookings">
+            <b>Dog Details</b>
+            <div>
+                Name: <i>{{ booking.dog.dogName }}</i>
+                <br/>
+                Age: <i>{{ booking.dog.age }}</i>
+                <br/>
+                Size: <i>{{ booking.dog.dogSize }}</i>
+                <br/>
+                Hair Length: <i>{{ booking.dog.hairLength }}</i>
+            </div>
+            <br/>
+            <b>Services:</b>
+            <div>
+                Name: <i>{{ booking.groomServices[0].name }}</i>
+                <br/>
+                Description: <i>{{ booking.groomServices[0].description }}</i>
+            </div>
+        </div>
+    </div>
+
 </div>
 

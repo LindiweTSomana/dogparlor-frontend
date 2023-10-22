@@ -37,3 +37,25 @@
     margin-top: 30px;
     cursor: pointer;
 }
+
+#editModal {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    padding: 35px;   
+}
+
+#editModal #closeModal {
+    background-color: rgb(6, 78, 150);
+    color: white;
+    padding: 10px;
+    border: none;
+}
+
+#editModal input, select {
+    margin-left: 30px;
+    padding: 5px;
+}
+
+
+#closeModal {
+    margin-left: 2px !important;
+}

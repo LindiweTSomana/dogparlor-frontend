@@ -2,6 +2,7 @@ import { Contact } from "./Contact";
 
 export interface Customer {
     customerID?: string,
+    user: any,
     firstName: string,
     lastName: string,
     contacts: Array<Contact>,

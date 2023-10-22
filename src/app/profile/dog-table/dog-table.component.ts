@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class DogTableComponent implements OnInit {
 
   public dogs: Array<Dog> = [];
-  public customer: Customer = JSON.parse(localStorage.getItem('customer') || '{}');
+  public customer: Customer = JSON.parse(atob((localStorage.getItem('token') || '{}').split('.')[1])).customer;
   @Output() childEvent: EventEmitter<any> = new EventEmitter<any>();
   
   constructor(private dogService: DogService, private shared: SharedService) {}
